@@ -1,5 +1,6 @@
 
 module.exports = {
+    publicPath: '/vue-components',
     chainWebpack: config => {
         config.module.rule('md')
             .test(/\.md/)
