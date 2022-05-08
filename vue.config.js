@@ -1,6 +1,8 @@
 
 module.exports = {
-    publicPath: '/vue-components',
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/vue-components/'
+        : '/',
     chainWebpack: config => {
         config.module.rule('md')
             .test(/\.md/)
