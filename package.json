@@ -1,16 +1,32 @@
 {
-  "name": "mg-components",
+  "name": "vue-components",
+  "author": {
+    "name": "丁永亚"
+  },
   "version": "0.1.0",
-  "private": true,
+  "description": "vue 快捷组件",
+  "keywords": ["vue", "element", "vxe-table", "ui"],
+  "main": "lib/vueComponents.umd.min.js",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name vueComponents --dest lib components/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "element-ui": "^2.15.8",
+    "github-markdown-css": "^5.1.0",
+    "highlight.js": "^11.5.1",
+    "html-loader": "^3.1.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-container": "^3.0.0",
+    "markdown-loader": "^8.0.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
+    "vue-markdown-loader": "^2.5.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
@@ -26,7 +42,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-loader": "^14.0.0",
+    "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
     "root": true,
