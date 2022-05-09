@@ -1,8 +1,11 @@
 # 123
 
-<div class="test">
+
+<div>
     <mg-search-form></mg-search-form>
-{{msg}}</div>
+<el-button>tse</el-button>
+{{msg}}
+</div>
 
 <script>
 export default {
@@ -14,3 +17,36 @@ export default {
 }
 </script>
 
+<div>
+    <mg-search-form></mg-search-form>
+<el-button>tse</el-button>
+{{msg}}
+</div>
+
+<script>
+export default {
+    data() {
+        return {
+            msg: 'msg1'
+        }
+    }
+}
+</script>
+
+```html
+<div>
+    <mg-search-form></mg-search-form>
+<el-button>tse</el-button>
+{{msg}}
+</div>
+
+<script>
+export default {
+    data() {
+        return {
+            msg: 'msg1'
+        }
+    }
+}
+</script>
+```
