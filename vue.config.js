@@ -6,7 +6,7 @@ module.exports = {
     configureWebpack: {
       resolve: {
           alias: {
-              "#":  path.join(__dirname, 'docs')
+              "@docs":  path.join(__dirname, 'docs')
           }
       }
     },
