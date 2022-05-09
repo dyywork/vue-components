@@ -15,6 +15,11 @@ const routes = [
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
+  {
+    path: '/mg-search-form',
+    name: 'mgSearchForm',
+    component: () => import(/* webpackChunkName: "about" */ '#/mgSearchForm.md')
+  },
 ]
 
 const router = new VueRouter({
