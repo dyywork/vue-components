@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-    <router-link to="/mg-search-form">mgSearchForm</router-link>
     <router-view/>
   </div>
 </template>
@@ -21,6 +18,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  height: 100vh;
 }
 
 #nav {

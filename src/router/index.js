@@ -1,34 +1,37 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import Layout from "../Layout/Layout";
+import Home from "../views/Home";
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: "/",
-    component: Layout,
-    children: [
-      {
-        path: '/',
-        name: 'Home',
-        component: Home
-      },
-      {
-        path: '/about',
-        name: 'About',
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-      },
-      {
-        path: '/mg-search-form',
-        name: 'mgSearchForm',
-        component: () => import(/* webpackChunkName: "about" */ '@docs/mgSearchForm.md')
-      },
-    ]
-  },
-
-
+export const routes = [
+    {
+        path: "/",
+        name: 'Layout',
+        component: Layout,
+        meta: { title: 'form' },
+        children: [
+            {
+                path: '/',
+                name: 'Home',
+                component: Home,
+                meta: { title: 'Home' },
+            },
+            {
+                path: '/about',
+                name: 'About',
+                component: () => import('@src/views/About.vue'),
+                meta: { title: 'About' },
+            },
+            {
+                path: '/mg-search-form',
+                name: 'mgSearchForm',
+                component: () => import('@docs/mgSearchForm.md'),
+                meta: { title: 'mgSearchForm' },
+            },
+        ]
+    },
 ]
 
 const router = new VueRouter({

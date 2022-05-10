@@ -8,6 +8,7 @@ import MgComponents from "../components/index.js";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'highlight.js/styles/github.css'
+import '@src/style/index.scss'
 
 
 Vue.config.productionTip = false
