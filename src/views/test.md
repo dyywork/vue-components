@@ -1,11 +1,13 @@
-# 123
 
 
-<div>
-    <mg-search-form></mg-search-form>
-<el-button>tse</el-button>
-{{msg}}
+<el-card>
+    <div>
+        <mg-search-form></mg-search-form>
+    <el-button>tse</el-button>
+    {{msg}}
 </div>
+</el-card>
+
 
 <script>
 export default {
@@ -50,6 +52,7 @@ export default {
 }
 </script>
 ```
+
 
 | 属性                | 描述                                                                                                                                                  | 类型    | 默认值 |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------ |

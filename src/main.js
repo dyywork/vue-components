@@ -7,7 +7,7 @@ import 'github-markdown-css'
 import MgComponents from "../components/index.js";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/atom-one-dark.css'
 import '@src/style/index.scss'
 
 
