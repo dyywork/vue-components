@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+
 @mixin scrollbar {
   max-height: 88vh;
   margin-bottom: 0.5vh;
@@ -69,4 +70,10 @@ html {
       @include base-scrollbar;
     }
   }
+}
+
+.details::before{
+  content: 'vue';
+  position: absolute;
+  right: 10px;
 }

@@ -35,6 +35,19 @@ export default {
 }
 </script>
 
+::: tip
+测试tip
+:::
+
+::: warning
+注意：
+:::
+
+::: danger
+警告：
+:::
+
+::: details
 ```html
 <div>
     <mg-search-form></mg-search-form>
@@ -52,6 +65,7 @@ export default {
 }
 </script>
 ```
+:::
 
 
 | 属性                | 描述                                                                                                                                                  | 类型    | 默认值 |
