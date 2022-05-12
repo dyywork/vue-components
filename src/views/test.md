@@ -2,7 +2,7 @@
 
 <el-card>
     <div>
-        <mg-search-form>1</mg-search-form>
+        <mg-search-form></mg-search-form>
     <el-button>tse</el-button>
     {{msg}}
 </div>
