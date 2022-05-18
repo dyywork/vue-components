@@ -6,7 +6,7 @@ md({
 })
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production'
-        ? '/vue-components/'
+        ? '/vue-utils/'
         : '/',
     configureWebpack: {
       resolve: {
@@ -23,11 +23,12 @@ module.exports = {
             .use('vue-loader')
             .loader('vue-loader')
             .end()
-            .use('vue-markdown-loader')
-            .loader('vue-markdown-loader/lib/markdown-compiler')
+            .use('dingyongya-vue-markdown-loader')
+            .loader('dingyongya-vue-markdown-loader/lib/markdown-compiler')
             .options({
                 raw: true,
                 preventExtract: true,
+                script: true,
                 use: [
                     [require('markdown-it-container'), 'tip'],
                     [require('markdown-it-container'), 'warning'],
@@ -40,9 +41,9 @@ module.exports = {
                         render(tokens, idx) {
                             if (tokens[idx].nesting === 1) {
                                 const content = tokens[idx + 1].type === 'html_block' ? tokens[idx + 1].content : '';
-                                return '<div class="flex_col"><pre class="hljs"><code>' +
+                                return '<div class="flex_col"><dyy-code><pre class="hljs"><code>' +
                                     hljs.highlight("html", content, true).value +
-                                    '</code></pre>'
+                                    '</code></pre></dyy-code>'
                             }
                             return '</div>';
                         }}

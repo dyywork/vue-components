@@ -1,10 +1,12 @@
 <template>
-  <div>mgTable</div>
+  <div>
+    mgTable
+  </div>
 </template>
 
 <script>
 export default {
-  name: "mgTable"
+  name: 'MgTable'
 }
 </script>
 

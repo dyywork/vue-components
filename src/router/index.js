@@ -8,7 +8,6 @@ Vue.use(VueRouter)
 export const routes = [
     {
         path: "/",
-        name: 'Layout',
         component: Layout,
         meta: { title: 'form' },
         children: [
@@ -18,12 +17,12 @@ export const routes = [
             //     component: Home,
             //     meta: { title: 'Home' },
             // },
-            // {
-            //     path: '/about',
-            //     name: 'About',
-            //     component: () => import('@src/views/About.vue'),
-            //     meta: { title: 'About' },
-            // },
+            {
+                path: '/',
+                name: 'About',
+                component: () => import('@docs/mgTable.md'),
+                meta: { title: 'About' },
+            },
             {
                 path: '/mg-search-form',
                 name: 'mgSearchForm',

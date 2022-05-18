@@ -1,9 +1,9 @@
 {
-  "name": "vue-components",
+  "name": "dyy-vue-components",
   "author": {
     "name": "丁永亚"
   },
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "vue 快捷组件",
   "keywords": [
     "vue",
@@ -11,18 +11,19 @@
     "vxe-table",
     "ui"
   ],
-  "main": "lib/vueComponents.umd.min.js",
+  "main": "lib/dyyVueComponents.umd.min.js",
   "license": "MIT",
-  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name vueComponents --dest lib components/index.js",
+    "lib": "vue-cli-service build --target lib --name dyyVueComponents --dest lib components/index.js",
     "build:pages": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "dingyongya-vue-markdown-loader": "^2.5.2",
+    "dyy-vue-components": "^0.1.1",
     "element-ui": "^2.15.8",
     "github-markdown-css": "^5.1.0",
     "highlight.js": "^11.5.1",
@@ -44,6 +45,7 @@
     "@vue/cli-plugin-vuex": "~4.5.15",
     "@vue/cli-service": "~4.5.15",
     "babel-eslint": "^10.1.0",
+    "dayjs": "^1.11.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.0.4",

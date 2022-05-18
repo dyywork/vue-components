@@ -9,6 +9,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'highlight.js/styles/atom-one-dark.css'
 import '@src/style/index.scss'
+// import dyyVueComponents from "dyy-vue-components";
+// import 'dyy-vue-components/lib/vueComponents.css'
 
 
 Vue.config.productionTip = false

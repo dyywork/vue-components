@@ -1,12 +1,17 @@
 <template>
   <div>
-    <el-form ref="form" :model="form" v-bind="$attrs" v-on="$listeners">
+    <el-form
+      ref="form"
+      :model="form"
+      v-bind="$attrs"
+      v-on="$listeners"
+    >
       <el-row>
         <el-col
-            v-for="(item, index) in formItemList"
-            v-show="index <= firstIndex || expandType"
-            :key="index"
-            :span="item.span || 6"
+          v-for="(item, index) in formItemList"
+          v-show="index <= firstIndex || expandType"
+          :key="index"
+          :span="item.span || 6"
         >
           <el-form-item v-if="item.turnLabel">
             <template v-slot:label>
@@ -16,126 +21,188 @@
                   <i class="el-icon-caret-bottom el-icon--right dropdown-icon" />
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                  <el-dropdown-item v-for="(dropdown, dropIndex) in item.attrs.options" :key="dropIndex" :command="dropdown.model">{{ dropdown.label }}</el-dropdown-item>
+                  <el-dropdown-item
+                    v-for="(dropdown, dropIndex) in item.attrs.options"
+                    :key="dropIndex"
+                    :command="dropdown.model"
+                  >
+                    {{ dropdown.label }}
+                  </el-dropdown-item>
                 </el-dropdown-menu>
               </el-dropdown>
             </template>
             <el-input
-                v-model="form[item.model]"
-                :placeholder="item.placeholder"
-                clearable
+              v-model="form[item.model]"
+              :placeholder="item.placeholder"
+              clearable
             />
           </el-form-item>
-          <el-form-item v-else :label="item.label" :prop="item.model">
+          <el-form-item
+            v-else
+            :label="item.label"
+            :prop="item.model"
+          >
             <!-- input -->
             <el-input
-                v-if="item.type === 'input'"
-                v-model="form[item.model]"
-                :placeholder="item.placeholder || '请输入'"
-                clearable
+              v-if="item.type === 'input'"
+              v-model="form[item.model]"
+              :placeholder="item.placeholder || '请输入'"
+              clearable
             />
             <!-- select 是否多选根据initialValue属性是否为数组判断；需要传进来options属性为select选择属性 -->
             <el-select
-                v-if="item.type === 'select'"
-                v-model="form[item.model]"
-                :multiple="Array.isArray(item.initialValue || '')"
-                collapse-tags
-                clearable
-                filterable
-                :placeholder="item.placeholder || '请选择'"
-                @change="(event) => selectChange(event, item)"
+              v-if="item.type === 'select'"
+              v-model="form[item.model]"
+              :multiple="Array.isArray(item.initialValue || '')"
+              collapse-tags
+              clearable
+              filterable
+              :placeholder="item.placeholder || '请选择'"
+              @change="(event) => selectChange(event, item)"
             >
               <el-option
-                  v-for="itemSub in item.options"
-                  :key="itemSub.value"
-                  :label="itemSub.label"
-                  :value="itemSub.value"
-              ></el-option>
+                v-for="itemSub in item.options"
+                :key="itemSub.value"
+                :label="itemSub.label"
+                :value="itemSub.value"
+              />
             </el-select>
             <!-- 日期范围选择器 -->
             <el-date-picker
-                v-if="item.type === 'date'"
-                :style="item.type === 'date' && item.attrs.type === 'daterange' ? {width: '264px', marginRight: '10px'}: {}"
-                v-model="form[item.model]"
-                :type="item.attrs.type || 'date'"
-                :format="item.attrs.format || 'yyyy-MM-dd'"
-                :value-format="item.attrs.valueFormat || 'timestamp'"
-                :placeholder="item.placeholder || '请选择'"
-                :range-separator="item.attrs.rangeSeparator || '至'"
-                start-placeholder="开始日期"
-                end-placeholder="结束日期"
-                @change="(event) => dateChange(event, item)"
-            ></el-date-picker>
-            <div v-if="item.type === 'date' && item.attrs.type === 'daterange'" style="display: inline-block; position: relative; top:-1px">
-              <el-button v-for="time in dateList" :key="time.value" @click="createDate(time, item)">{{time.name}}</el-button>
+              v-if="item.type === 'date'"
+              v-model="form[item.model]"
+              :style="item.type === 'date' && item.attrs.type === 'daterange' ? {width: '264px', marginRight: '10px'}: {}"
+              :type="item.attrs.type || 'date'"
+              :format="item.attrs.format || 'yyyy-MM-dd'"
+              :value-format="item.attrs.valueFormat || 'timestamp'"
+              :placeholder="item.placeholder || '请选择'"
+              :range-separator="item.attrs.rangeSeparator || '至'"
+              start-placeholder="开始日期"
+              end-placeholder="结束日期"
+              @change="(event) => dateChange(event, item)"
+            />
+            <div
+              v-if="item.type === 'date' && item.attrs.type === 'daterange'"
+              style="display: inline-block; position: relative; top:-1px"
+            >
+              <el-button
+                v-for="time in dateList"
+                :key="time.value"
+                @click="createDate(time, item)"
+              >
+                {{ time.name }}
+              </el-button>
             </div>
             <div v-if="item.type === 'range'">
-              <el-input-number v-model="form[item.model]" :placeholder="item.placeholder" :controls="false" @blur="rangeBlur('min', item)"/>
-              <span style="padding: 0 5px">{{item.separator}}</span>
-              <el-input-number v-model="form[item.maxModel]" :placeholder="item.maxPlaceholder" :controls="false" @blur="rangeBlur('max', item)"/>
+              <el-input-number
+                v-model="form[item.model]"
+                :placeholder="item.placeholder"
+                :controls="false"
+                @blur="rangeBlur('min', item)"
+              />
+              <span style="padding: 0 5px">{{ item.separator }}</span>
+              <el-input-number
+                v-model="form[item.maxModel]"
+                :placeholder="item.maxPlaceholder"
+                :controls="false"
+                @blur="rangeBlur('max', item)"
+              />
             </div>
           </el-form-item>
         </el-col>
-        <el-col class="button_box" :span="6">
-          <el-form-item label-width="0" class="button_position">
-            <el-button type="primary" icon="el-icon-search" @click="handleSearch">查询</el-button>
-            <el-button icon="el-icon-refresh" @click="handleReset">重置</el-button>
+        <el-col
+          class="button_box"
+          :span="6"
+        >
+          <el-form-item
+            label-width="0"
+            class="button_position"
+          >
             <el-button
-                v-show="spanLength >= 24 * row"
-                type="text"
-                @click="openForm"
+              type="primary"
+              icon="el-icon-search"
+              @click="handleSearch"
+            >
+              查询
+            </el-button>
+            <el-button
+              icon="el-icon-refresh"
+              @click="handleReset"
+            >
+              重置
+            </el-button>
+            <el-button
+              v-show="spanLength >= 24 * row"
+              type="text"
+              @click="openForm"
             >
               <span v-if="expandType">收起筛选</span>
               <span v-else>更多筛选</span>
-              <i v-if="expandType" class="el-icon-arrow-up"></i>
-              <i v-else class="el-icon-arrow-down"></i>
+              <i
+                v-if="expandType"
+                class="el-icon-arrow-up"
+              />
+              <i
+                v-else
+                class="el-icon-arrow-down"
+              />
             </el-button>
           </el-form-item>
         </el-col>
       </el-row>
     </el-form>
-    <section v-if="!expandType && hideFormList.length > 0" class="form_footer">
-      <div class="tag_title">已选条件：</div>
+    <section
+      v-if="!expandType && hideFormList.length > 0"
+      class="form_footer"
+    >
+      <div class="tag_title">
+        已选条件：
+      </div>
       <div class="tag_content">
         <el-tag
-            v-for="(tag, index) in hideFormList"
-            :key="index"
-            closable
-            size="mini"
-            class="tag_box"
-            @close="closeTag(tag)"
+          v-for="(tag, index) in hideFormList"
+          :key="index"
+          closable
+          size="mini"
+          class="tag_box"
+          @close="closeTag(tag)"
         >
-        <span v-if="tag.type === 'input'">
-          {{ tag.label }}: {{ tag.value }}
-        </span>
+          <span v-if="tag.type === 'input'">
+            {{ tag.label }}: {{ tag.value }}
+          </span>
           <span v-else-if="tag.type === 'select'">
-          {{ tag.label }}: {{ tag.value.map((item) => item.label).toString() }}
-        </span>
+            {{ tag.label }}: {{ tag.value.map((item) => item.label).toString() }}
+          </span>
           <span v-else-if="tag.type === 'daterange'">
-          {{ tag.label }}: {{ dayjs(tag.value[0]).format('YYYY-MM-DD') }} 至 {{ dayjs(tag.value[1]).format('YYYY-MM-DD') }}
-        </span>
+            {{ tag.label }}: {{ dayjs(tag.value[0]).format('YYYY-MM-DD') }} 至 {{ dayjs(tag.value[1]).format('YYYY-MM-DD') }}
+          </span>
           <span v-else-if="tag.type === 'datetimerange'">
-          {{ tag.label }}: {{ dayjs(tag.value[0]).format('YYYY-MM-DD HH:mm:ss') }} 至 {{ dayjs(tag.value[1]).format('YYYY-MM-DD HH:mm:ss') }}
-        </span>
+            {{ tag.label }}: {{ dayjs(tag.value[0]).format('YYYY-MM-DD HH:mm:ss') }} 至 {{ dayjs(tag.value[1]).format('YYYY-MM-DD HH:mm:ss') }}
+          </span>
           <span v-else-if="tag.type === 'monthrange'">
-          {{ tag.label }}: {{ dayjs(tag.value[0]).format('YYYY-MM') }} 至 {{ dayjs(tag.value[1]).format('YYYY-MM') }}
-        </span>
+            {{ tag.label }}: {{ dayjs(tag.value[0]).format('YYYY-MM') }} 至 {{ dayjs(tag.value[1]).format('YYYY-MM') }}
+          </span>
           <span v-else-if="tag.type === 'dates'">
-          {{ tag.label }}: {{ tag.value.map(item => dayjs(item).format('YYYY-MM-DD')).toString() }}
-        </span>
+            {{ tag.label }}: {{ tag.value.map(item => dayjs(item).format('YYYY-MM-DD')).toString() }}
+          </span>
           <span v-else-if="tag.type === 'week'">
-          {{ tag.label }}: {{ tag.value }}
-        </span>
+            {{ tag.label }}: {{ tag.value }}
+          </span>
           <span v-else-if="tag.type === 'date'">
-          {{ tag.label }}: {{ dayjs(tag.value).format('YYYY-MM-DD') }}
-        </span>
+            {{ tag.label }}: {{ dayjs(tag.value).format('YYYY-MM-DD') }}
+          </span>
           <span v-else-if="tag.type === 'range'">
-          {{ tag.label }}: {{ tag.value }}
-        </span>
+            {{ tag.label }}: {{ tag.value }}
+          </span>
         </el-tag>
       </div>
       <div class="tag_close">
-        <el-button type="text" @click="handleReset">清除</el-button>
+        <el-button
+          type="text"
+          @click="handleReset"
+        >
+          清除
+        </el-button>
       </div>
     </section>
   </div>
@@ -145,7 +212,8 @@
 import mixins from './mixins'
 import dayjs from 'dayjs'
 export default {
-  name: 'mgSearchForm',
+  name: 'MgSearchForm',
+  mixins: [mixins],
   props: {
     formItemList: {
       // 表单基本配置数据
@@ -158,7 +226,6 @@ export default {
       default: 1
     }
   },
-  mixins: [mixins],
   data () {
     return {
       dayjs: dayjs,
@@ -341,7 +408,6 @@ export default {
           }
         })
       })
-      console.log(1);
       this.$emit('get-search-form-data', dataObj)
     }
   }

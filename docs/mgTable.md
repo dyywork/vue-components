@@ -2,7 +2,7 @@
 
 ::: demo
 <el-card shadow="never">
-    <mg-search-form :form-item-list="formItemList" :row="2" inline size="mini" @get-search-form-data="getSearchFormData"></mg-search-form>
+<mg-search-form :form-item-list="formItemList" :row="2" inline size="mini" @get-search-form-data="getSearchFormData"></mg-search-form>
 </el-card>
 <script>
     export default {
@@ -14,10 +14,6 @@
           count: 0
         }
       },
-        created() {
-            console.log(2);
-            console.log(this.count)
-        },
       methods: {
         getSearchFormData(data) {
             console.log(data);
@@ -34,7 +30,7 @@
 
 ::: demo
 <el-card shadow="never">
-    <mg-search-form :form-item-list="formItemLists" :row="2" inline size="mini" @get-search-form-data="handleSearch"></mg-search-form>
+<mg-search-form :form-item-list="formItemLists" :row="2" inline size="mini" @get-search-form-data="handleSearch"></mg-search-form>
 </el-card>
 <script>
     export default {
@@ -48,16 +44,6 @@
           msg: '123'
         }
       },
-        beforeCreate() {
-            console.log('beforeCreate')
-        },
-        beforeMount() {
-            console.log('beforeMount')
-        },
-        mounted() {
-            console.log('mounted')
-        },
-        beforeDestroy() {},
       methods: {
         handleSearch(data) {
             console.log(data);
