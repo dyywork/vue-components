@@ -7,11 +7,14 @@
 
 <template>
   <el-container>
-    <el-aside width="200px" class="aside">
-      <menu-side></menu-side>
+    <el-aside
+      width="200px"
+      class="aside"
+    >
+      <menu-side />
     </el-aside>
     <el-main>
-      <router-view></router-view>
+      <router-view />
     </el-main>
   </el-container>
 </template>

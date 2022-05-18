@@ -76,3 +76,11 @@ html {
   position: absolute;
   right: 10px;
 }
+.flex_col{
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.hljs{
+  padding: 10px;
+}

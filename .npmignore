@@ -2,6 +2,7 @@ components
 public
 src
 docs
+dist
 
 babel.config.js
 package-lock.json

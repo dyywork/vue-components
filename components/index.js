@@ -1,9 +1,11 @@
 import mgSearchForm from "./mgSearchForm";
 import mgTable from "./mgTable";
+import dyyCode from "./dyyCode";
 
 const components = [
     mgSearchForm,
-    mgTable
+    mgTable,
+    dyyCode
 ]
 
 const install = (Vue) => {
@@ -19,5 +21,6 @@ export default {
     install,
     // 以下是具体的组件列表
     mgSearchForm,
-    mgTable
+    mgTable,
+    dyyCode
 }

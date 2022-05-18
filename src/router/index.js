@@ -1,27 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from "../Layout/Layout";
-import Home from "../views/Home";
+// import Home from "../views/Home";
 
 Vue.use(VueRouter)
 
 export const routes = [
     {
         path: "/",
-        name: 'Layout',
         component: Layout,
         meta: { title: 'form' },
         children: [
+            // {
+            //     path: '/',
+            //     name: 'Home',
+            //     component: Home,
+            //     meta: { title: 'Home' },
+            // },
             {
                 path: '/',
-                name: 'Home',
-                component: Home,
-                meta: { title: 'Home' },
-            },
-            {
-                path: '/about',
                 name: 'About',
-                component: () => import('@src/views/About.vue'),
+                component: () => import('@docs/mgTable.md'),
                 meta: { title: 'About' },
             },
             {
