@@ -7,10 +7,22 @@
 
 <template>
   <div>
-    <el-menu default-active="1-4-1" class="el-menu-vertical-demo">
-      <el-menu-item-group v-for="item in routes" :key="item.name">
+    <el-menu
+      default-active="1-4-1"
+      class="el-menu-vertical-demo"
+    >
+      <el-menu-item-group
+        v-for="item in routes"
+        :key="item.name"
+      >
         <span slot="title">{{ item.meta.title }}</span>
-        <el-menu-item v-for="itemRoutes in item.children" :key="itemRoutes.name" @click="jumpPage(itemRoutes)">{{itemRoutes.meta.title}}</el-menu-item>
+        <el-menu-item
+          v-for="itemRoutes in item.children"
+          :key="itemRoutes.name"
+          @click="jumpPage(itemRoutes)"
+        >
+          {{ itemRoutes.meta.title }}
+        </el-menu-item>
       </el-menu-item-group>
     </el-menu>
   </div>
@@ -20,7 +32,7 @@
 import {routes} from '@src/router'
 
 export default {
-  name: "menuSide",
+  name: "MenuSide",
   data() {
     return {
       routes

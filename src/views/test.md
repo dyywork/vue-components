@@ -13,7 +13,7 @@
 export default {
     data() {
         return {
-            msg: 'msg1'
+            msg: 'msg112'
         }
     }
 }

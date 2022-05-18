@@ -56,7 +56,6 @@
 html {
   body {
     position: relative;
-    height: 100vh;
     padding: 0;
     margin: 0;
     color: #2c3e50;
@@ -76,4 +75,8 @@ html {
   content: 'vue';
   position: absolute;
   right: 10px;
+}
+.flex_col{
+  display: flex;
+  flex-direction: column-reverse;
 }
