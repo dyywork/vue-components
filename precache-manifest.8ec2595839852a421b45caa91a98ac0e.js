@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fonts/element-icons.732389de.ttf"
   },
   {
-    "revision": "a52d504bddf97d8c77401deac66011f7",
+    "revision": "00b53df4a1c7168259065e0ac845ec57",
     "url": "/index.html"
   },
   {
@@ -44,7 +44,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/chunk-vendors.33880f50.js"
   },
   {
-    "revision": "81f6b9fc9ac65637e41858292a269cad",
+    "revision": "c0653c92852596f88a2d7085120d609e",
     "url": "/manifest.json"
   },
   {
