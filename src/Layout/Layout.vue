@@ -7,15 +7,18 @@
 
 <template>
   <el-container>
-    <el-aside
-      width="200px"
-      class="aside"
-    >
-      <menu-side />
-    </el-aside>
-    <el-main>
-      <router-view />
-    </el-main>
+    <el-header>Header</el-header>
+    <el-container>
+      <el-aside
+        width="200px"
+        class="aside"
+      >
+        <menu-side />
+      </el-aside>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
   </el-container>
 </template>
 
@@ -29,7 +32,7 @@ export default {
 
 <style scoped lang="scss">
 .aside{
-  height: 100vh;
+  height: calc(100vh - 60px);
   background-color: #fff;
 }
 </style>
