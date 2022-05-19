@@ -17,7 +17,7 @@ importScripts(
   "/precache-manifest.445b3c047a9a17f0fd30490626899cb9.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "vue-components"});
+workbox.core.setCacheNameDetails({prefix: "dyy-vue-components"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
