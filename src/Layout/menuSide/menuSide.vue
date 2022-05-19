@@ -8,7 +8,7 @@
 <template>
   <div>
     <el-menu
-      default-active="1-4-1"
+      :default-active="index"
       class="el-menu-vertical-demo"
     >
       <el-menu-item-group
@@ -19,6 +19,7 @@
         <el-menu-item
           v-for="itemRoutes in item.children"
           :key="itemRoutes.name"
+          :index="itemRoutes.path"
           @click="jumpPage(itemRoutes)"
         >
           {{ itemRoutes.meta.title }}
@@ -35,8 +36,13 @@ export default {
   name: "MenuSide",
   data() {
     return {
-      routes
+      routes,
+      index: '/'
     }
+  },
+  mounted() {
+    const {path} = this.$route
+    this.index = path
   },
   methods: {
     jumpPage(item) {
@@ -49,6 +55,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+::v-deep{
+  .el-menu-item-group__title{
+    font-size: 18px;
+  }
+  .el-menu-item{
+    height: 40px;
+    line-height: 40px;
+  }
+}
 
 </style>

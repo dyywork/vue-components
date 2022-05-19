@@ -82,11 +82,14 @@ html {
 }
 
 .hljs{
+  @include base-scrollbar;
   margin: 10px;
   padding: 10px;
   font-size: 16px;
   font-family: 'Ubuntu Mono',monospace;
   font-weight: 400;
+  overflow: hidden;
+  overflow-x: scroll;
 }
 .el-menu{
   border: none;

@@ -67,10 +67,13 @@ export default {
 
     i{
       color: #ebedf0;
+      border: 1px solid #EBEEF5;
+      border-radius: 10px;
     }
     &:hover{
       i{
-        color: #2d2d2d;
+        color: #409EFF;
+        border: 1px solid #409EFF;
       }
     }
   }

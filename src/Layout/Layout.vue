@@ -8,7 +8,9 @@
 <template>
   <el-container>
     <el-header>
-      <header class="dyy_header" />
+      <header class="dyy_header">
+        DYY
+      </header>
     </el-header>
     <el-container>
       <el-aside
@@ -41,6 +43,13 @@ export default {
 .el-header{
   background-color: #ffffff;
   border-bottom: 1px #EBEEF5 solid;
+  .dyy_header{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    height: 100%;
+    color: #409EFF;
+  }
 }
 .el-main{
   height: calc(100vh - 60px);
