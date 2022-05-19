@@ -48,6 +48,17 @@ module.exports = {
                             return '</div>';
                         }}
                     ],
+                    [require('markdown-it-container'), 'title', {
+                        validate(params) {
+                            return params.trim().match(/^title\s*(.*)$/);
+                        },
+                        render(tokens, idx) {
+                            if (tokens[idx].nesting === 1) {
+                                return '<fieldset class="dyy_fieldset_title"><legend>'
+                            }
+                            return '</legend></fieldset>';
+                        }}
+                    ],
                 ],
             })
     }

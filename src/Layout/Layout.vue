@@ -7,7 +7,9 @@
 
 <template>
   <el-container>
-    <el-header>Header</el-header>
+    <el-header>
+      <header class="dyy_header" />
+    </el-header>
     <el-container>
       <el-aside
         width="200px"
@@ -34,5 +36,13 @@ export default {
 .aside{
   height: calc(100vh - 60px);
   background-color: #fff;
+  border-right: 1px #EBEEF5 solid;
+}
+.el-header{
+  background-color: #ffffff;
+  border-bottom: 1px #EBEEF5 solid;
+}
+.el-main{
+  height: calc(100vh - 60px);
 }
 </style>

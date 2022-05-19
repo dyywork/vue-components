@@ -52,14 +52,16 @@
     background-color: #f8fafc;
   }
 }
-
+.el-main{
+  @include base-scrollbar;
+}
 html {
   body {
     position: relative;
     padding: 0;
     margin: 0;
     color: #2c3e50;
-    background: #ebedf0;
+    background: #ffffff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -71,16 +73,32 @@ html {
   }
 }
 
-.details::before{
-  content: 'vue';
-  position: absolute;
-  right: 10px;
-}
 .flex_col{
   display: flex;
   flex-direction: column-reverse;
+  border: 1px #EBEEF5 solid;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .hljs{
+  margin: 10px;
   padding: 10px;
+  font-size: 16px;
+  font-family: 'Ubuntu Mono',monospace;
+  font-weight: 400;
+}
+.el-menu{
+  border: none;
+}
+.dyy_fieldset_title{
+  border: none;
+  border-top: 1px #EBEEF5 solid;
+  padding-left: 20px;
+  legend{
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  margin-bottom: 20px;
 }
