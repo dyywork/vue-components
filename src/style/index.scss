@@ -90,6 +90,10 @@ html {
   font-weight: 400;
   overflow: hidden;
   overflow-x: scroll;
+  background-color: #fafafa;
+  code{
+    line-height: 25px;
+  }
 }
 .el-menu{
   border: none;
