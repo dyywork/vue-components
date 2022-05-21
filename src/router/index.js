@@ -11,12 +11,6 @@ export const routes = [
         component: Layout,
         meta: { title: 'form' },
         children: [
-            // {
-            //     path: '/',
-            //     name: 'Home',
-            //     component: Home,
-            //     meta: { title: 'Home' },
-            // },
             {
                 path: '/',
                 name: 'About',

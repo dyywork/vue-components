@@ -9,7 +9,10 @@
   <el-container>
     <el-header>
       <header class="dyy_header">
-        DYY
+        <img
+          style="height: 30px"
+          src="../assets/logo.png"
+        >
       </header>
     </el-header>
     <el-container>

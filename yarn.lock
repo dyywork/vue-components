@@ -3147,6 +3147,11 @@ connect-history-api-fallback@^1.6.0:
   resolved "https://registry.npmjs.org/connect-history-api-fallback/-/connect-history-api-fallback-1.6.0.tgz"
   integrity sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg==
 
+consola@^2.15.3:
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/consola/-/consola-2.15.3.tgz#2e11f98d6a4be71ff72e0bdf07bd23e12cb61550"
+  integrity sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==
+
 console-browserify@^1.1.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/console-browserify/-/console-browserify-1.2.0.tgz"
@@ -3811,6 +3816,16 @@ dingyongya-vue-markdown-loader@^2.5.2:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/dingyongya-vue-markdown-loader/-/dingyongya-vue-markdown-loader-2.5.2.tgz#5c2c45317ff10d18507e12746a7e9db1b5f2b140"
   integrity sha512-Yry0K8gN5AQG36kC1TF2zwk14Gotx1q9V/tUAFmhYP2ohoOk/FSoJBAUSDbA3maOBo6O+ARzytnWdn60sQ5I3g==
+  dependencies:
+    cheerio "^1.0.0-rc.10"
+    highlight.js "^11.3.1"
+    loader-utils "^1.4.0"
+    markdown-it "^8.4.2"
+
+dingyongya-vue-markdown-loader@^2.5.3:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/dingyongya-vue-markdown-loader/-/dingyongya-vue-markdown-loader-2.5.3.tgz#05e539beaa7a8e710b0e641f053131a0792542ee"
+  integrity sha512-E+fwbuFomAV0MBVseftMTUhIZrCDUlx39lTXnJsCEWAm3cXOcH3pKKS9eTTOdBWPHm8F49c5g0D07p2Dsq+VWQ==
   dependencies:
     cheerio "^1.0.0-rc.10"
     highlight.js "^11.3.1"
@@ -7889,6 +7904,11 @@ pretty-error@^2.0.2:
     lodash "^4.17.20"
     renderkid "^2.0.4"
 
+pretty-time@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/pretty-time/-/pretty-time-1.1.0.tgz#ffb7429afabb8535c346a34e41873adf3d74dd0e"
+  integrity sha512-28iF6xPQrP8Oa6uxE6a1biz+lWeTOAPKggvjB8HAs6nVMKZwf5bG++632Dx614hIWgUPkgivRfG+a8uAXGTIbA==
+
 process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.npmjs.org/process-nextick-args/-/process-nextick-args-2.0.1.tgz"
@@ -8895,6 +8915,11 @@ static-extend@^0.1.1:
   version "1.5.0"
   resolved "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+
+std-env@^3.0.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.1.1.tgz#1f19c4d3f6278c52efd08a94574a2a8d32b7d092"
+  integrity sha512-/c645XdExBypL01TpFKiG/3RAa/Qmu+zRi0MwAmrdEkwHNuN0ebo8ccAXBBDa5Z0QOJgBskUIbuCK91x0sCVEw==
 
 stream-browserify@^2.0.1:
   version "2.0.2"
@@ -9957,6 +9982,16 @@ webpack@^4.0.0:
     terser-webpack-plugin "^1.4.3"
     watchpack "^1.7.4"
     webpack-sources "^1.4.1"
+
+webpackbar@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/webpackbar/-/webpackbar-5.0.2.tgz#d3dd466211c73852741dfc842b7556dcbc2b0570"
+  integrity sha512-BmFJo7veBDgQzfWXl/wwYXr/VFus0614qZ8i9znqcl9fnEdiVkdbi0TedLQ6xAK92HZHDJ0QmyQ0fmuZPAgCYQ==
+  dependencies:
+    chalk "^4.1.0"
+    consola "^2.15.3"
+    pretty-time "^1.1.0"
+    std-env "^3.0.1"
 
 websocket-driver@>=0.5.1, websocket-driver@^0.7.4:
   version "0.7.4"

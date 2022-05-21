@@ -4,7 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import 'github-markdown-css'
-import MgComponents from "../components/index.js";
+import MgComponents from "../package/components/index.js";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'highlight.js/styles/atom-one-dark.css'
