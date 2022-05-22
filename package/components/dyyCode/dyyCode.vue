@@ -17,7 +17,7 @@
       </div>
     </height-transition>
     <div
-      :class="['dyy_code_footer',codeContent? 'dyy_code_border' : '']"
+      :class="['dyy_code_footer',codeContent? 'dyy_code_border dyy_code_footer_fixed' : '']"
       @click="handleExpand"
     >
       <i :class="codeContent? 'el-icon-caret-top': 'el-icon-caret-bottom'" />
@@ -38,9 +38,6 @@ export default {
   methods: {
     handleExpand() {
      this.codeContent = !this.codeContent
-    if (this.codeContent) {
-
-    }
     }
   }
 }
@@ -48,13 +45,16 @@ export default {
 
 <style scoped lang="scss">
 .dyy_code{
-  overflow: hidden;
   margin-top: 10px;
   border-radius: 4px;
   border: 1px #EBEEF5 solid;
 
   .dyy_code_border{
     border-top: 1px #EBEEF5 solid;
+  }
+  .dyy_code_footer_fixed{
+    position: sticky;
+    bottom: -20px;
   }
   .dyy_code_footer{
     display: flex;
@@ -66,8 +66,8 @@ export default {
     cursor: pointer;
 
     i{
-      color: #ebedf0;
-      border: 1px solid #EBEEF5;
+      color: #cdd0d7;
+      border: 1px solid #cdd0d7;
       border-radius: 10px;
     }
     &:hover{

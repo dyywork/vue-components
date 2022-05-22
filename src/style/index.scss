@@ -86,13 +86,13 @@ html {
   margin: 10px;
   padding: 10px;
   font-size: 16px;
-  font-family: 'Ubuntu Mono',monospace;
-  font-weight: 400;
+  font-weight: 500;
   overflow: hidden;
   overflow-x: scroll;
-  background-color: #fafafa;
+  border-radius: 4px;
   code{
-    line-height: 25px;
+    line-height: 1.4;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   }
 }
 .el-menu{

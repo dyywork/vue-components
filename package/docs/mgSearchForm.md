@@ -4,7 +4,13 @@
 
 ::: demo
 <el-card shadow="never">
-    <mg-search-form :form-item-list="formItemList" :row="2" inline size="mini" @get-search-form-data="getSearchFormData"></mg-search-form>
+    <mg-search-form
+        :form-item-list="formItemList"
+        :row="2"
+        inline
+        size="mini"
+        @get-search-form-data="getSearchFormData">
+    </mg-search-form>
 </el-card>
 <script>
     export default {
@@ -36,7 +42,13 @@
 
 ::: demo
 <el-card shadow="never">
-    <mg-search-form :form-item-list="formItemLists" :row="2" inline size="mini" @get-search-form-data="handleSearch"></mg-search-form>
+    <mg-search-form
+        :form-item-list="formItemLists"
+        :row="2"
+        inline
+        size="mini"
+        @get-search-form-data="handleSearch">
+    </mg-search-form>
 </el-card>
 <script>
     export default {
