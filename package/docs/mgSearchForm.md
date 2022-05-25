@@ -1,16 +1,16 @@
 ::: title
-高级筛选
+基本用法
 :::
 
 ::: demo
+
 <el-card shadow="never">
-    <mg-search-form
-        :form-item-list="formItemList"
-        :row="2"
-        inline
-        size="mini"
-        @get-search-form-data="getSearchFormData">
-    </mg-search-form>
+  <mg-search-form
+    :form-item-list="formItemList"
+    :row="2"
+    inline size="mini"
+    @get-search-form-data="getSearchFormData">
+  </mg-search-form>
 </el-card>
 <script>
     export default {
@@ -40,12 +40,17 @@
 </style>
 :::
 
+::: title
+高级筛选
+:::
+
+
 ::: demo
+
 <el-card shadow="never">
     <mg-search-form
         :form-item-list="formItemLists"
         :row="2"
-        inline
         size="mini"
         @get-search-form-data="handleSearch">
     </mg-search-form>
