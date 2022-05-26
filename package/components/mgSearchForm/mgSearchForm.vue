@@ -415,6 +415,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
+.el-form{
+  .el-form-item {
+    .el-select {
+      width: 100%;
+    }
+    & > .el-form-item__content {
+      > .el-input,
+      .el-date-editor--daterange.el-input__inner {
+        width: 100%;
+      }
+    }
+  }
+}
 ::v-deep{
   .el-select__tags{
     span:nth-child(1) {
