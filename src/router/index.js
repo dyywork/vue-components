@@ -1,18 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// import Layout from "../Layout/Layout";
+import LayoutContainer from "../Layout/LayoutContainer";
+import Home from "../views/Home";
 import Layout from "../Layout/Layout";
-// import Home from "../views/Home";
 
 Vue.use(VueRouter)
 
+
 export const routes = [
     {
-        path: "/",
+        path: "/index",
         component: Layout,
         meta: { title: 'form' },
         children: [
             {
-                path: '/',
+                path: '/index',
                 name: 'About',
                 component: () => import('@docs/mgTable.md'),
                 meta: { title: 'About' },
@@ -27,10 +30,27 @@ export const routes = [
     },
 ]
 
+const routesCommon = [
+    {
+        path: "/",
+        component: LayoutContainer,
+        meta: { title: 'form' },
+        children: [
+            {
+                path: '/',
+                name: 'Home',
+                component: Home,
+                meta: { title: 'Home' },
+            },
+            ...routes
+        ]
+    },
+]
+
 const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,
-  routes
+  routes:routesCommon
 })
 
 export default router

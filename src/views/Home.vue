@@ -1,23 +1,31 @@
 <template>
   <div class="home">
-    <mg-search-form />
-    <mg-table />
-    <img
-      alt="Vue logo"
-      src="../assets/logo.png"
+    <el-button
+      type="primary"
+      @click="goIndex"
     >
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+      开始
+    </el-button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/utils/HelloWorld.vue'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  methods: {
+    goIndex() {
+      this.$router.push({path: '/index'})
+    }
   }
 }
 </script>
+<style scoped>
+.home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 60px);
+}
+</style>
