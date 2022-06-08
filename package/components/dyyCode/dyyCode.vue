@@ -10,8 +10,7 @@
     <height-transition>
       <div
         v-show="codeContent"
-        ref="codeContent"
-        class="dyy_code_content"
+        class="language-html line-numbers"
       >
         <slot />
       </div>
@@ -35,6 +34,9 @@ export default {
       codeContent: false,
     }
   },
+  mounted() {
+    Prism.highlightAll()
+  },
   methods: {
     handleExpand() {
      this.codeContent = !this.codeContent
@@ -44,6 +46,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
+::v-deep{
+  pre[class*="language-"]{
+    margin: 0;
+  }
+}
 .dyy_code{
   margin-top: 10px;
   border-radius: 4px;

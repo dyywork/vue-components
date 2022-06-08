@@ -1207,6 +1207,13 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@highlightjs/vue-plugin@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@highlightjs/vue-plugin/-/vue-plugin-1.0.2.tgz#b63cc02b9f89803698166335e2c62028b52b3c26"
+  integrity sha512-4VVPeUZL6/NZ7J6/23RQIYLm9HR9rnOdz+cxx7/ISgtMVaf0vHAAwgHKmB54GNs5VvJlWMnKOuiLVcy30elz8g==
+  dependencies:
+    highlight.js "^10.7.2"
+
 "@intervolga/optimize-cssnano-plugin@^1.0.5":
   version "1.0.6"
   resolved "https://registry.npmjs.org/@intervolga/optimize-cssnano-plugin/-/optimize-cssnano-plugin-1.0.6.tgz"
@@ -3822,10 +3829,10 @@ dingyongya-vue-markdown-loader@^2.5.2:
     loader-utils "^1.4.0"
     markdown-it "^8.4.2"
 
-dingyongya-vue-markdown-loader@^2.5.3:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/dingyongya-vue-markdown-loader/-/dingyongya-vue-markdown-loader-2.5.3.tgz#05e539beaa7a8e710b0e641f053131a0792542ee"
-  integrity sha512-E+fwbuFomAV0MBVseftMTUhIZrCDUlx39lTXnJsCEWAm3cXOcH3pKKS9eTTOdBWPHm8F49c5g0D07p2Dsq+VWQ==
+dingyongya-vue-markdown-loader@^2.5.4:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/dingyongya-vue-markdown-loader/-/dingyongya-vue-markdown-loader-2.5.4.tgz#c7d6cc1638cfb50ecf54c1a816327c9b39e4c15c"
+  integrity sha512-lqEbyOGmKwShilTK2EVRtbANmPNEuxHvtecMNr0eEta/3j/wTqvsh3wH0fs2TyX2xn3OnI1jZiUIRrrFsV8leA==
   dependencies:
     cheerio "^1.0.0-rc.10"
     highlight.js "^11.3.1"
@@ -5201,7 +5208,7 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.npmjs.org/hex-color-regex/-/hex-color-regex-1.1.0.tgz"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
-highlight.js@^10.7.1:
+highlight.js@^10.7.1, highlight.js@^10.7.2:
   version "10.7.3"
   resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz"
   integrity sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==

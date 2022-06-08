@@ -2,6 +2,7 @@ const path = require('path')
 const container = require('markdown-it-container');
 const md = require('markdown-it');
 const WebpackBar = require('webpackbar')
+
 md({
     html: true
 })
@@ -48,6 +49,7 @@ module.exports = {
                 raw: true,
                 preventExtract: true,
                 script: true,
+                wrapper: 'div',
                 use: [
                     [container, 'tip'],
                     [container, 'warning'],
