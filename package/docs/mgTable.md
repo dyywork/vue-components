@@ -23,16 +23,16 @@ export default {
       list: [{label: '名称', age: 12},{label: '名称', age: 12},{label: '名称', age: 12},]
     }
   },
-    beforeCreate() {
-        console.log('beforeCreate');
-    },
-    beforeMount() {
-        console.log('beforeMount');
-    },
-    mounted() {
-        console.log('mounted');
-    },
-    beforeDestroy() {},
+  beforeCreate() {
+      console.log('beforeCreate');
+  },
+  beforeMount() {
+      console.log('beforeMount');
+  },
+  mounted() {
+      console.log('mounted');
+  },
+  beforeDestroy() {},
   methods: {
     handleSearch(data) {
         console.log(data);

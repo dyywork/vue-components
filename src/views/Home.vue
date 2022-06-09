@@ -6,9 +6,6 @@
     >
       开始
     </el-button>
-    <pre>
-        <code class="language-xml line-numbers">&lt;span class="itsicons"&gt;{{ code }}&lt;/span&gt;</code>
-      </pre>
   </div>
 </template>
 

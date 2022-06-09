@@ -13,7 +13,7 @@
       label-width="100px"
       @get-search-form-data="handleSearch">
     </mg-search-form>
-    {{msg}}
+    <el-button @click="count++">{{count}}</el-button>
   </el-card>
 </template>
 <script>
@@ -36,16 +36,21 @@
         msg: '123'
       }
     },
-      beforeCreate() {
-          console.log('beforeCreate');
+    watch: {
+      count: function (val, oldVal) {
+        console.log(val)
       },
-      beforeMount() {
-          console.log('beforeMount');
-      },
-      mounted() {
-          console.log('mounted');
-      },
-      beforeDestroy() {},
+    },
+    beforeCreate() {
+        console.log('beforeCreate');
+    },
+    beforeMount() {
+        console.log('beforeMount');
+    },
+    mounted() {
+        console.log('mounted');
+    },
+    beforeDestroy() {},
     methods: {
       handleSearch(data) {
           console.log(data);
