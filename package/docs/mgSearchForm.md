@@ -11,6 +11,15 @@
     inline size="mini"
     @get-search-form-data="getSearchFormData">
   </mg-search-form>
+<el-table :data="formItemList" border>
+<el-table-column label="name">
+  <template #default="scope">
+    {{scope.row.label}}
+  </template>
+</el-table-column>
+</el-table>
+{{count}}
+<el-button @click="goCount">test</el-button>
 </el-card>
 <script>
     export default {
@@ -19,18 +28,27 @@
           formItemList: [
             {type: "input", label: "名称", model: 'test',initialValue: null, span: 6}
           ],
-          count: 0
+          count: 0,
+          msg: '123'
         }
       },
+      watch: {
+          count: function (val,oldVal) {
+            console.log(val);
+          },
+        },
         created() {
             console.log(2);
             console.log(this.count)
         },
-      methods: {
-        getSearchFormData(data) {
-            console.log(data);
-        },
-      }
+        methods: {
+          getSearchFormData(data) {
+              console.log(data);
+          },
+          goCount() {
+            this.count++
+          }
+        }
     }
 </script>
 <style scope>
@@ -55,6 +73,7 @@
 				label-width="100px"
         @get-search-form-data="handleSearch">
     </mg-search-form>
+<el-button @click="msg++">{{msgs}}</el-button>
 </el-card>
 <script>
     export default {
@@ -73,9 +92,19 @@
             {type: "input", label: "名称9", model: 'test9',initialValue: null, span: 6},
           ],
           count: 0,
-          msg: '123'
+          msg: 1
         }
       },
+        watch: {
+          msg: function (val, oldVal) {
+            console.log(oldVal);
+          }
+        },
+        computed: {
+          msgs: function (){
+            return this.msg + 3;
+          },
+        },
         beforeCreate() {
             console.log('beforeCreate')
         },

@@ -3822,10 +3822,10 @@ dingyongya-vue-markdown-loader@^2.5.2:
     loader-utils "^1.4.0"
     markdown-it "^8.4.2"
 
-dingyongya-vue-markdown-loader@^2.5.3:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/dingyongya-vue-markdown-loader/-/dingyongya-vue-markdown-loader-2.5.3.tgz#05e539beaa7a8e710b0e641f053131a0792542ee"
-  integrity sha512-E+fwbuFomAV0MBVseftMTUhIZrCDUlx39lTXnJsCEWAm3cXOcH3pKKS9eTTOdBWPHm8F49c5g0D07p2Dsq+VWQ==
+dingyongya-vue-markdown-loader@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/dingyongya-vue-markdown-loader/-/dingyongya-vue-markdown-loader-2.5.6.tgz#a4ecb95f2b794b7d61d27fce1019bc5cc88a33ab"
+  integrity sha512-dqDL8Jzqr1MCfjms6cPJb5UMymD8fPR9PYvl/Pzztm0bIuB8DmRk1jMM+ceBtrh27eCqmYoX8TYIpaCf+myTcA==
   dependencies:
     cheerio "^1.0.0-rc.10"
     highlight.js "^11.3.1"
