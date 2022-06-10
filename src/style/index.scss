@@ -73,10 +73,12 @@ html {
   }
 }
 
+$borderColor: #EBEEF5;
+
 .flex_col{
   display: flex;
   flex-direction: column-reverse;
-  border: 1px #EBEEF5 solid;
+  border: 1px $borderColor solid;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -100,7 +102,7 @@ html {
 }
 .dyy_fieldset_title{
   border: none;
-  border-top: 1px #EBEEF5 solid;
+  border-top: 1px $borderColor solid;
   padding-left: 20px;
   legend{
     padding: 0 10px;
@@ -108,4 +110,26 @@ html {
     font-weight: normal;
   }
   margin-bottom: 20px;
+}
+/* markdown table style */
+.dyy_table {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    tr {
+      th{
+        background-color: #fdfdfd;
+      }
+      th,td {
+        border: 1px $borderColor solid;
+        line-height: 30px;
+        padding: 3px 8px;
+        code {
+          background-color: #ebeef5;
+          padding: 2px;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
 }

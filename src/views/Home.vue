@@ -10,9 +10,18 @@
 </template>
 
 <script>
-
 export default {
   name: 'Home',
+  data() {
+    return {
+      code: `console.log(1)`
+    }
+  },
+  computed: {
+    pageType() {
+      return 'test'
+    }
+  },
   methods: {
     goIndex() {
       this.$router.push({path: '/index'})

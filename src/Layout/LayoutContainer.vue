@@ -21,6 +21,7 @@
           default-active="/index"
           class="el-menu-demo"
           mode="horizontal"
+          active-text-color="#409EFF"
           @select="handleSelect"
         >
           <el-menu-item index="/index">
@@ -61,6 +62,7 @@ export default {
       this.$router.push('/')
     },
     handleSelect(key, keyPath) {
+      if (this.$route.path === '/index') return
       this.$router.push({path: key})
     }
   }
@@ -78,7 +80,7 @@ export default {
     height: 100%;
     color: #409EFF;
     .header_logo{
-      width: 200px;
+      width: 180px;
     }
   }
   img{

@@ -1,5 +1,4 @@
-const hljs = require('highlight.js')
-
+const escapeHtml = require('escape-html');
 /*
 * markdown demo code setting
 * */
@@ -9,10 +8,8 @@ const demo = {
     },
     render(tokens, idx) {
         if (tokens[idx].nesting === 1) {
-            const content = tokens[idx + 1].type === 'html_block' ? tokens[idx + 1].content : '';
-            return '<div class="flex_col"><dyy-code><pre class="hljs"><code>' +
-                hljs.highlight("html", content, true).value +
-                '</code></pre></dyy-code>'
+            let content = tokens[idx + 1].type === 'html_block' ? tokens[idx + 1].content : '';
+            return '<div class="flex_col"><dyy-code><pre v-pre><code>'+ escapeHtml(content) +'</code></pre></dyy-code>'
         }
         return '</div>';
     }
@@ -31,5 +28,17 @@ const title = {
         return '</legend></fieldset>';
     }
 }
+// markdown table setting
+const table = {
+    validate(params) {
+        return params.trim().match(/^table\s*(.*)$/);
+    },
+    render(tokens, idx) {
+        if (tokens[idx].nesting === 1) {
+            return '<div class="dyy_table">'
+        }
+        return '</div>';
+    }
+}
 
-module.exports = {demo, title}
+module.exports = {demo, title, table}
