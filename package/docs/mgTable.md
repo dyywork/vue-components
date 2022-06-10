@@ -42,3 +42,28 @@ export default {
 </script>
 
 :::
+
+::: demo
+
+<template>
+  <el-button>test1</el-button>
+</template>
+<script>
+export default {
+  data() {
+    return {}
+  },
+  beforeCreate() {
+      console.log('beforeCreate');
+  },
+  beforeMount() {
+      console.log('beforeMount');
+  },
+  mounted() {
+      console.log('mounted');
+  },
+  beforeDestroy() {},
+}
+</script>
+
+:::

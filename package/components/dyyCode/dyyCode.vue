@@ -11,6 +11,19 @@
       <div
         v-show="codeContent"
       >
+        <div
+          class="dyy_copy_button"
+          @click="copyCode"
+        >
+          <div
+            v-pre
+            class="codeHtml"
+            style="display: none"
+          >
+            <slot name="code" />
+          </div>
+          复制
+        </div>
         <div class="language-html line-numbers">
           <slot />
         </div>
@@ -27,20 +40,37 @@
 
 <script>
 import heightTransition from './utils'
+import unescapeHtml from 'unescape-html'
 export default {
   name: "DyyCode",
   components: {heightTransition},
+  props: {
+    htmlTest: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       codeContent: false,
+      codeHtml: ''
     }
   },
   mounted() {
-     Prism.highlightAll()
+    Prism.highlightAll()
   },
   methods: {
     handleExpand() {
      this.codeContent = !this.codeContent
+    },
+    copyCode(e) {
+      this.codeHtml = unescapeHtml(e.target.children[0].children[0].children[0].innerHTML)
+      // 复制 不支持http
+        navigator && navigator.clipboard && navigator.clipboard.writeText(this.codeHtml).then(res => {
+          this.$message.success('复制成功')
+        }).catch(err=> {
+          console.log(err);
+        })
     }
   }
 }
@@ -56,10 +86,23 @@ export default {
   }
 }
 .dyy_code{
+  position: relative;
   margin-top: 10px;
   border-radius: 4px;
   border: 1px #EBEEF5 solid;
-
+  .dyy_copy_button{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    font-size: 12px;
+    color: #409EFF;
+    border:1px #c6e2ff solid;
+    background-color: #ecf5ff;
+    border-radius: 3px;
+    padding: 3px 5px;
+    cursor: pointer;
+  }
   .dyy_code_border{
     border-top: 1px #EBEEF5 solid;
   }
@@ -77,8 +120,9 @@ export default {
     cursor: pointer;
 
     i{
-      color: #cdd0d7;
-      border: 1px solid #cdd0d7;
+      color: #409EFF;
+      border:1px #c6e2ff solid;
+      background-color: #ecf5ff;
       border-radius: 10px;
     }
     &:hover{
