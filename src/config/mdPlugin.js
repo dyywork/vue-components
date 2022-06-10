@@ -9,7 +9,8 @@ const demo = {
     render(tokens, idx) {
         if (tokens[idx].nesting === 1) {
             let content = tokens[idx + 1].type === 'html_block' ? tokens[idx + 1].content : '';
-            return '<div class="flex_col"><dyy-code><pre v-pre><code>'+ escapeHtml(content) +'</code></pre></dyy-code>'
+            // return '<div class="flex_col"><dyy-code><pre v-pre><code>'+ escapeHtml(content) +'</code></pre></dyy-code>'
+            return `<div class="flex_col"><dyy-code><template v-slot:code>${escapeHtml(content)}</template><pre v-pre><code>${escapeHtml(content)}</code></pre></dyy-code>`
         }
         return '</div>';
     }
