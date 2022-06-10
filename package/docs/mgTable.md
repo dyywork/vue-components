@@ -5,7 +5,7 @@
 ::: demo
 
 <template>
-  <el-table :data="list" border>
+  <el-table :data="list" border fit>
     <el-table-column label="名称">
       <template #default="scope">
         {{scope.row.label}}
