@@ -1,5 +1,7 @@
-::: title
-基本用法
+::: anchor
+:::
+
+::: title 基本用法
 :::
 
 ::: demo
@@ -13,7 +15,6 @@
       label-width="100px"
       @get-search-form-data="handleSearch">
     </mg-search-form>
-    <el-button @click="count++">{{count}}</el-button>
   </el-card>
 </template>
 <script>
@@ -61,8 +62,7 @@
 
 :::
 
-::: title
-属性
+::: title 属性
 :::
 
 ::: table
@@ -73,4 +73,7 @@
 | col 2 is | centered      |   $12 |
 | zebra stripes| are neat |    $1 |
 
+:::
+
+::: title 测试
 :::
