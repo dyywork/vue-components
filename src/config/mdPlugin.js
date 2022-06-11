@@ -24,9 +24,11 @@ const title = {
     },
     render(tokens, idx) {
         if (tokens[idx].nesting === 1) {
-            return '<fieldset class="dyy_fieldset_title"><legend>'
+            const title = tokens[idx].info.trim().match(/^title\s*(.*)$/)[1]
+            console.log(tokens[idx]);
+            return `<dyy-title title-name="${title}">`
         }
-        return '</legend></fieldset>';
+        return '</dyy-title>';
     }
 }
 // markdown table setting
@@ -42,4 +44,26 @@ const table = {
     }
 }
 
-module.exports = {demo, title, table}
+// markdown table setting
+const anchor = {
+    validate(params) {
+        return params.trim().match(/^anchor\s*(.*)$/);
+    },
+    render(tokens, idx) {
+        const token = tokens[idx]
+        if (token.nesting === 1) {
+            let anchorList = []
+            for (let key of tokens) {
+                if (key.info.includes('title')) {
+                    const title = key.info.trim().match(/^title\s*(.*)$/)[1]
+                    anchorList.push(title)
+                }
+            }
+            console.log(anchorList);
+            return `<dyy-anchor anchor-list="${anchorList}">`
+        }
+        return '</dyy-anchor>';
+    }
+}
+
+module.exports = {demo, title, table, anchor}

@@ -13,7 +13,7 @@
     >
       <menu-side />
     </el-aside>
-    <el-main>
+    <el-main class="main-container">
       <router-view />
     </el-main>
   </el-container>

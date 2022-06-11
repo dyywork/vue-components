@@ -3805,11 +3805,6 @@ detect-indent@6.0.0:
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-6.0.0.tgz#0abd0f549f69fc6659a254fe96786186b6f528fd"
   integrity sha512-oSyFlqaTHCItVRGK5RmrmjB+CmaMOW7IaNA/kdxqhoa6d17j/5ce9O9eWXmV/KEdRwqpQA+Vqe8a8Bsybu4YnA==
 
-detect-indent@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-5.0.0.tgz#3871cc0a6a002e8c3e5b3cf7f336264675f06b9d"
-  integrity sha512-rlpvsxUtM0PQvy9iZe640/IWwWYyBsTApREbA1pHOpmOUIl9MkP/U4z7vTtg4Oaojvqhxt7sdufnT0EzGaR31g==
-
 detect-node@^2.0.4:
   version "2.1.0"
   resolved "https://registry.npmjs.org/detect-node/-/detect-node-2.1.0.tgz"
@@ -3839,10 +3834,10 @@ dingyongya-vue-markdown-loader@^2.5.2:
     loader-utils "^1.4.0"
     markdown-it "^8.4.2"
 
-dingyongya-vue-markdown-loader@^2.5.6:
-  version "2.5.6"
-  resolved "https://registry.yarnpkg.com/dingyongya-vue-markdown-loader/-/dingyongya-vue-markdown-loader-2.5.6.tgz#a4ecb95f2b794b7d61d27fce1019bc5cc88a33ab"
-  integrity sha512-dqDL8Jzqr1MCfjms6cPJb5UMymD8fPR9PYvl/Pzztm0bIuB8DmRk1jMM+ceBtrh27eCqmYoX8TYIpaCf+myTcA==
+dingyongya-vue-markdown-loader@^2.5.7:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/dingyongya-vue-markdown-loader/-/dingyongya-vue-markdown-loader-2.5.7.tgz#d9a48ec27ec355bc11243900436a459d95969330"
+  integrity sha512-UBEcKq2EjOW2Y4j4cjrNghv4fXTKUBYCw8lGEWqMvHGsX+u1P4MyS9mRrlNstnNkFbLrmgx1yeazlo6MCkDztA==
   dependencies:
     cheerio "^1.0.0-rc.10"
     highlight.js "^11.3.1"
@@ -5529,11 +5524,6 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
-
-indent-string@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz#4a5fd6d27cc332f37e5419a504dbb837105c9289"
-  integrity sha512-BYqTHXTGUIvg7t1r4sJNKcbDZkL92nkXA8YtRpbjFHRHGDL/NtUeiBJMeE60kIFN/Mg8ESaWQvftaYMGJzQZCQ==
 
 indent-string@^4.0.0:
   version "4.0.0"
@@ -8166,14 +8156,6 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-redent@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/redent/-/redent-2.0.0.tgz#c1b2007b42d57eb1389079b3c8333639d5e1ccaa"
-  integrity sha512-XNwrTx77JQCEMXTeb8movBKuK75MgH0RZkujNuDKCezemx/voapl9i2gCSi8WWm8+ox5ycJi1gxF22fR7c0Ciw==
-  dependencies:
-    indent-string "^3.0.0"
-    strip-indent "^2.0.0"
-
 redent@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/redent/-/redent-3.0.0.tgz#e557b7998316bb53c9f1f56fa626352c6963059f"
@@ -9435,7 +9417,7 @@ ts-pnp@^1.1.6:
   resolved "https://registry.npmjs.org/ts-pnp/-/ts-pnp-1.2.0.tgz"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-tslib@^1.10.0, tslib@^1.9.0, tslib@^1.9.3:
+tslib@^1.10.0, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
@@ -9785,15 +9767,6 @@ vue-eslint-parser@^7.0.0:
     esquery "^1.4.0"
     lodash "^4.17.21"
     semver "^6.3.0"
-
-vue-highlight.js@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/vue-highlight.js/-/vue-highlight.js-3.1.0.tgz#87b60b4931fd310b318f2b2c9116fe71b69dd053"
-  integrity sha512-i55SERtdV0CYQppGo29iT6NOq+oOenOKVwkLWZRt7bSynbsQoj/e8GJy/5xL1s5OOYObC/CxA39bRadVyPQt1A==
-  dependencies:
-    detect-indent "^5.0.0"
-    redent "^2.0.0"
-    tslib "^1.9.3"
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"

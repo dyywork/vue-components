@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
 }
-
+ul{
+  list-style: none;
+}
 
 @mixin scrollbar {
   max-height: 88vh;
@@ -132,4 +134,7 @@ $borderColor: #EBEEF5;
       }
     }
   }
+}
+.markdown {
+  width: calc(100% - 150px);
 }

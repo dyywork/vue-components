@@ -7,7 +7,7 @@ md({
     html: true
 })
 
-const {demo, title, table} = require('./src/config/mdPlugin')
+const {demo, title, table, anchor} = require('./src/config/mdPlugin')
 
 module.exports = {
     publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
@@ -50,6 +50,7 @@ module.exports = {
                 preventExtract: true,
                 script: true,
                 wrapper: 'div',
+                className: 'markdown',
                 use: [
                     [container, 'tip'],
                     [container, 'warning'],
@@ -58,6 +59,7 @@ module.exports = {
                     [container, 'demo', demo],
                     [container, 'title', title],
                     [container, 'table', table],
+                    [container, 'anchor', anchor],
                 ],
             })
     },
