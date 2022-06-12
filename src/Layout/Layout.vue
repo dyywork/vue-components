@@ -16,6 +16,7 @@
     <el-main class="main-container">
       <router-view />
     </el-main>
+    <el-backtop target=".main-container" />
   </el-container>
 </template>
 
