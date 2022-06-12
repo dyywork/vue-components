@@ -37,6 +37,12 @@ export default {
   methods: {
     // 点击锚点
     handleTitle(title){
+      // 判断是否有滚动条
+      const scrollHeight = document.querySelector('.main-container').scrollHeight;
+      const clientHeight = document.querySelector('.main-container').clientHeight;
+      if(scrollHeight <= clientHeight) {
+        this.active = title
+      }
       document.querySelector("#"+ title)?.scrollIntoView({
         behavior: "smooth",
         block: "start",
