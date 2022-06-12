@@ -48,7 +48,7 @@ export default {
       document.querySelector('.main-container').addEventListener('scroll',  (e)=>{
         this.debounce(this.getOffsetTop(), 1000)
         Object.keys(this.locationTop).forEach(key => {
-          if (e.target.scrollTop >= this.locationTop[key]) {
+          if (e.target.scrollTop >= this.locationTop[key]-20) {
             this.active = key;
           }
         })
