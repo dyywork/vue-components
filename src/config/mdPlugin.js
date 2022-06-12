@@ -25,7 +25,6 @@ const title = {
     render(tokens, idx) {
         if (tokens[idx].nesting === 1) {
             const title = tokens[idx].info.trim().match(/^title\s*(.*)$/)[1]
-            console.log(tokens[idx]);
             return `<dyy-title title-name="${title}">`
         }
         return '</dyy-title>';
@@ -59,7 +58,6 @@ const anchor = {
                     anchorList.push(title)
                 }
             }
-            console.log(anchorList);
             return `<dyy-anchor anchor-list="${anchorList}">`
         }
         return '</dyy-anchor>';
