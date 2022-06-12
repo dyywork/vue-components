@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.88a841bc6402472b608f839de0968896.js"
+  "precache-manifest.e55992bfbdeea2fb75446a934dca764c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "dyy-vue-components"});
