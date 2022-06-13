@@ -54,7 +54,7 @@ ul{
     background-color: #f8fafc;
   }
 }
-.el-main{
+.el-main, .language-html{
   @include base-scrollbar;
 }
 html {
