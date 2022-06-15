@@ -46,7 +46,7 @@
             <el-input
               v-if="item.type === 'input'"
               v-model="form[item.model]"
-              :placeholder="item.placeholder || '请输入'"
+              v-bind="item"
               clearable
             />
             <!-- select 是否多选根据initialValue属性是否为数组判断；需要传进来options属性为select选择属性 -->
@@ -54,10 +54,10 @@
               v-if="item.type === 'select'"
               v-model="form[item.model]"
               :multiple="Array.isArray(item.initialValue || '')"
+              v-bind="item"
               collapse-tags
               clearable
               filterable
-              :placeholder="item.placeholder || '请选择'"
               @change="(event) => selectChange(event, item)"
             >
               <el-option
@@ -72,11 +72,7 @@
               v-if="item.type === 'date'"
               v-model="form[item.model]"
               :style="item.type === 'date' && item.attrs.type === 'daterange' ? {width: '264px', marginRight: '10px'}: {}"
-              :type="item.attrs.type || 'date'"
-              :format="item.attrs.format || 'yyyy-MM-dd'"
-              :value-format="item.attrs.valueFormat || 'timestamp'"
-              :placeholder="item.placeholder || '请选择'"
-              :range-separator="item.attrs.rangeSeparator || '至'"
+              v-bind="item.attrs"
               start-placeholder="开始日期"
               end-placeholder="结束日期"
               @change="(event) => dateChange(event, item)"
