@@ -120,10 +120,10 @@ $borderColor: #EBEEF5;
     border-collapse: collapse;
     tr {
       th{
-        background-color: #fdfdfd;
+        background-color: #fafafa;
       }
       th,td {
-        border: 1px $borderColor solid;
+        border-bottom: 1px $borderColor solid;
         line-height: 30px;
         padding: 3px 8px;
         code {
