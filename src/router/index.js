@@ -26,6 +26,12 @@ export const routes = [
                 component: () => import('@docs/mgSearchForm.md'),
                 meta: { title: 'mgSearchForm' },
             },
+            {
+                path: '/dyy-tooltip',
+                name: 'dyyTooltip',
+                component: () => import('@docs/dyyTooltip.md'),
+                meta: { title: 'dyyTooltip' },
+            },
         ]
     },
 ]
