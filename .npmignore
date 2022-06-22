@@ -3,7 +3,13 @@ public
 src
 docs
 dist
+build
 
+deploy.sh
+.husky/commit-msg
+.eslintrc.js
+.eslintignore
+.cz-config.js
 babel.config.js
 package-lock.json
 vue.config.js
