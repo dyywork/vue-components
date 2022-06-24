@@ -1,15 +1,21 @@
 const path = require('path');
-const WebpackBar = require('webpackbar')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const fs = require('fs');
+const filePath = path.resolve('./package/components')
+
+// 整理多入口打包文件
+let components = {};
+const files = fs.readdirSync(filePath)
+files.forEach(item => {
+    if (!/\.js$/.test(item)) {
+        components[item] = `./package/components/${item}/index.js`
+    }
+})
 
 module.exports = {
     mode: 'production',
-    entry: {
-        "dyyCode": "./package/components/dyyCode/index.js",
-        "dyyTooltip": "./package/components/dyyTooltip/index.js",
-        "mgSearchForm": "./package/components/mgSearchForm/index.js",
-        "mgTable": "./package/components/mgTable/index.js",
-    },
+    entry: components,
     output: {
         path: path.resolve(process.cwd(), './lib'),
         filename: '[name]/[name].js',
@@ -42,7 +48,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new WebpackBar(),
+        new ProgressBarPlugin(),
         new VueLoaderPlugin()
     ]
 }
