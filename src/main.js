@@ -11,7 +11,8 @@ import 'highlight.js/styles/atom-one-dark.css'
 import '@src/style/index.scss'
 import DyyAnchor from './components/DyyAnchor.vue'
 import DyyTitle from './components/DyyTitle.vue'
-
+import directives from './directive/index'
+Vue.use(directives)
 // import dyyVueComponents from "dyy-vue-components";
 // import 'dyy-vue-components/lib/vueComponents.css'
 import 'prismjs'
