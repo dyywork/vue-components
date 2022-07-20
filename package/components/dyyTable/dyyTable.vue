@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'MgTable'
+  name: 'DyyTable'
 }
 </script>
 

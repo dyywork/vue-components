@@ -4,7 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import 'github-markdown-css'
-import MgComponents from "../package/components/index.js";
+import DyyComponents from "../package/components/index.js";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'highlight.js/styles/atom-one-dark.css'
@@ -20,7 +20,7 @@ import 'prismjs'
 Vue.config.productionTip = false
 Vue.component('dyy-anchor', DyyAnchor)
 Vue.component('dyy-title', DyyTitle)
-Vue.use(MgComponents)
+Vue.use(DyyComponents)
 Vue.use(ElementUI)
 new Vue({
   router,

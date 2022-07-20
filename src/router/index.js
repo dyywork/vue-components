@@ -17,14 +17,14 @@ export const routes = [
             {
                 path: '/index',
                 name: 'About',
-                component: () => import('@docs/mgTable.md'),
-                meta: { title: 'About' },
+                component: () => import('@docs/dyyTable.md'),
+                meta: { title: 'Table' },
             },
             {
-                path: '/mg-search-form',
+                path: '/search-form',
                 name: 'mgSearchForm',
-                component: () => import('@docs/mgSearchForm.md'),
-                meta: { title: 'mgSearchForm' },
+                component: () => import('@docs/dyySearchForm.md'),
+                meta: { title: 'searchForm' },
             },
             {
                 path: '/dyy-tooltip',
