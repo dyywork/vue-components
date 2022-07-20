@@ -44,6 +44,9 @@
     <el-form-item label="数字">
       <el-input v-number-input type="number" v-model="form.value1" @input="handleInput1"/>
     </el-form-item>
+<el-form-item label="数字2">
+      <el-input v-number-input:2 type="number" v-model="form.value2" @input="handleInput1"/>
+    </el-form-item>
     <el-button @click="submit">提交</el-button>
   </el-form>
 </template>
@@ -54,6 +57,7 @@
         form: {
           value: 0,
           value1: 0,
+          value2: 0,
         }
       }
     },

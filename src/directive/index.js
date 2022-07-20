@@ -40,7 +40,7 @@ const numberInput = {
             if (/\./.test(e.target.value) && binding.arg) {
                 let num = e.target.value.match(/\.(\S*)/)[1].length;
                 if (num > binding.arg) {
-                    e.target.value = Number(e.target.value.replace(/(\d+.\d{4})\d*/, '$1'))
+                    e.target.value = Number(e.target.value.match(/(\S*)\./)[0] + e.target.value.match(/\.(\S*)/)[1].slice(0, binding.arg))
                     el['__vue__'].handleInput(e)
                 }
             } else {
