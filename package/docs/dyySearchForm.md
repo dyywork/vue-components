@@ -8,13 +8,13 @@
 
 <template>
   <el-card shadow="never">
-    <mg-search-form
+    <dyy-search-form
       :form-item-list="formItemLists"
       :row="2"
       size="mini"
       label-width="100px"
       @get-search-form-data="handleSearch">
-    </mg-search-form>
+    </dyy-search-form>
   </el-card>
 </template>
 <script>
@@ -115,13 +115,13 @@
 
 <template>
   <el-card shadow="never">
-    <mg-search-form
+    <dyy-search-form
       :form-item-list="formItemList"
       :row="2"
       size="mini"
       label-width="100px"
       @get-search-form-data="handleSearch">
-    </mg-search-form>
+    </dyy-search-form>
   </el-card>
 </template>
 <script>
