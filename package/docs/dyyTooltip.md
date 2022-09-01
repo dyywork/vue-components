@@ -89,3 +89,25 @@
 </style>
 
 :::
+
+::: demo
+
+<template>
+<div>
+  <el-button @click="login">login</el-button>
+</div>
+</template>
+<script>
+export default {
+  data() {
+    return {}
+    },
+    methods: {
+      login() {
+        location.href="http://localhost/#/login"
+      }
+    }
+  }
+</script>
+
+:::
