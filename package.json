@@ -21,7 +21,7 @@
     "lib:all": "webpack --config build/webpack.components.js",
     "build:pages": "git subtree push --prefix dist origin gh-pages",
     "prepare": "husky install",
-    "commit": "git add . && git-cz && git push && npm run build && npm run build:pages && rm -rf dist"
+    "commit": "npm run build &&  git add . && git-cz && git push && npm run build:pages && rmdir dist"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "1.0.2",
