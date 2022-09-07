@@ -1,5 +1,8 @@
 <template>
-  <div class="home">
+  <div
+    class="home"
+    :style="note"
+  >
     <el-button
       type="primary"
       @click="goIndex"
@@ -14,7 +17,11 @@ export default {
   name: 'Home',
   data() {
     return {
-      code: `console.log(1)`
+      note: {
+        backgroundImage: "url(" + require("../assets/one.jpg") + ")",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "auto",
+      }
     }
   },
   computed: {
