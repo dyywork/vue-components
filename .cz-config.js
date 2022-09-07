@@ -13,6 +13,8 @@ module.exports = {
     ],
     scopes: [
         { name: "component" },
+        { name: "docs" },
+        { name: "cli" },
     ],
     messages: {
         type: "选择一种你的提交类型:",
