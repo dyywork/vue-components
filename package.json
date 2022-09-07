@@ -23,7 +23,7 @@
     "prepare": "husky install",
     "publish": "npm run build &&  git add . && git-cz && npm run build:pages && npm run rm:dist",
     "commit": "git add . && git-cz && git push",
-    "rm:dist": "git rm dist && git add . && git commit -m 'feat:docs 删除dist' && git push"
+    "rm:dist": "git rm -r dist && git add . && git commit -m 'feat:docs 删除dist' && git push"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "1.0.2",
