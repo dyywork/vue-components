@@ -24,7 +24,6 @@ export default {
 
   },
   mounted() {
-
     const canvas = this.$refs.canvas
     const ctx = canvas.getContext('2d');
     // ctx.fillStyle = 'green';
