@@ -33,6 +33,7 @@ export default {
   height: calc(100vh - 60px);
   background-color: #fff;
   border-right: 1px #EBEEF5 solid;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, .15);
 }
 
 .el-main{

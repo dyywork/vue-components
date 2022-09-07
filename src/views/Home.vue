@@ -1,29 +1,25 @@
 <template>
   <div
     class="home"
-    :style="note"
   >
-    <el-button
-      type="primary"
-      @click="goIndex"
-    >
-      开始
-    </el-button>
+    <section>
+      <el-button
+        type="primary"
+        @click="goIndex"
+      >
+        开始
+      </el-button>
+    </section>
+
+    <dyy-canvas />
   </div>
 </template>
 
 <script>
+import DyyCanvas from "../components/DyyCanvas";
 export default {
   name: 'Home',
-  data() {
-    return {
-      note: {
-        backgroundImage: "url(" + require("../assets/one.jpg") + ")",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "auto",
-      }
-    }
-  },
+  components: {DyyCanvas},
   computed: {
     pageType() {
       return 'test'
@@ -36,12 +32,16 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style scoped lang="scss">
 .home{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: calc(100vh - 60px);
+  //background-color: #ecf4fa;
+  section {
+    z-index: 1;
+  }
 }
 </style>
