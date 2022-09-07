@@ -20,10 +20,11 @@
     "lib": "vue-cli-service build --target lib --name dyyVueComponents --dest lib package/components/index.js && npm run lib:all",
     "lib:all": "webpack --config build/webpack.components.js",
     "build:pages": "git subtree push --prefix dist origin gh-pages",
+    "delete:pages": "git push origin --delete gh-pages",
     "prepare": "husky install",
-    "publish": "npm run build &&  git add . && git-cz && npm run build:pages && npm run rm:dist",
+    "publish": "npm run build &&  git add . && git-cz && npm run delete:pages && npm run build:pages && npm run rm:dist",
     "commit": "git add . && git-cz && git push",
-    "rm:dist": "git rm -r dist && git add . && git commit -m 'feat:docs 删除dist' && git push"
+    "rm:dist": "git rm -r dist && git add . && git commit -m 'feat:docs' && git push"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "1.0.2",
