@@ -120,7 +120,7 @@
       :row="2"
       size="mini"
       label-width="100px"
-      @get-search-form-data="handleSearch">
+      @get-search-form-data="handleSearch1">
     </dyy-search-form>
   </el-card>
 </template>
@@ -160,7 +160,7 @@
     },
     beforeDestroy() {},
     methods: {
-      handleSearch(data) {
+      handleSearch1(data) {
           console.log(data);
       }
     }

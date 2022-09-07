@@ -396,15 +396,6 @@ export default {
     // 选择
     handleSelect(value, item) {
       this.form[item.model] = value.skuCode
-      console.log(value)
-      console.log(item)
-    },
-    handleMorePage(data) {
-      this.searchMoreForm = data
-      this.$emit('handleSearchMore', data)
-    },
-    handleSubmit(data) {
-      this.$emit('getSearchFormData', data)
     },
     handleSet() {
       this.$refs.setFormItem.show()

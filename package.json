@@ -21,12 +21,13 @@
     "lib:all": "webpack --config build/webpack.components.js",
     "build:pages": "git subtree push --prefix dist origin gh-pages",
     "prepare": "husky install",
-    "commit": "npm run build &&  git add . && git-cz && git push && npm run build:pages && rmdir /s dist"
+    "publish": "npm run build &&  git add . && git-cz && npm run build:pages && rmdir /s dist && git push",
+    "commit": "git add . && git-cz && git push"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "1.0.2",
     "core-js": "^3.6.5",
-    "dingyongya-vue-markdown-loader": "^2.5.7",
+    "dingyongya-vue-markdown-loader": "^2.5.8",
     "dyy-vue-components": "^0.1.1",
     "element-ui": "^2.15.8",
     "github-markdown-css": "^5.1.0",
