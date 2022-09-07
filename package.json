@@ -21,8 +21,9 @@
     "lib:all": "webpack --config build/webpack.components.js",
     "build:pages": "git subtree push --prefix dist origin gh-pages",
     "prepare": "husky install",
-    "publish": "npm run build &&  git add . && git-cz && npm run build:pages && git rm dist && git push",
-    "commit": "git add . && git-cz && git push"
+    "publish": "npm run build &&  git add . && git-cz && npm run build:pages && npm run rm:dist",
+    "commit": "git add . && git-cz && git push",
+    "rm:dist": "git rm dist && git add . && git commit -m 'feat:docs 删除dist' && git push"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "1.0.2",
