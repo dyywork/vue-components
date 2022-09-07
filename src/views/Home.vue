@@ -20,11 +20,6 @@ import DyyCanvas from "../components/DyyCanvas";
 export default {
   name: 'Home',
   components: {DyyCanvas},
-  computed: {
-    pageType() {
-      return 'test'
-    }
-  },
   methods: {
     goIndex() {
       this.$router.push({path: '/index'})
