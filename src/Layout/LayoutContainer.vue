@@ -71,8 +71,10 @@ export default {
 
 <style scoped lang="scss">
 .el-header{
+  z-index: 10;
   background-color: #ffffff;
   border-bottom: 1px #EBEEF5 solid;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
   .dyy_header{
     display: flex;
     align-items: center;
