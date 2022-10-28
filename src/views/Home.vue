@@ -1,25 +1,22 @@
 <template>
-  <div
-    class="home"
-  >
+  <div class="home">
     <section>
-      <el-button
-        type="primary"
-        @click="goIndex"
-      >
-        开始
-      </el-button>
+      <img src="../assets/logo_small.png">
+      <div class="home-button">
+        <el-button
+          type="primary"
+          @click="goIndex"
+        >
+          开始
+        </el-button>
+      </div>
     </section>
-
-    <dyy-canvas />
   </div>
 </template>
 
 <script>
-import DyyCanvas from "../components/DyyCanvas";
 export default {
   name: 'Home',
-  components: {DyyCanvas},
   methods: {
     goIndex() {
       this.$router.push({path: '/index'})
@@ -34,9 +31,15 @@ export default {
   align-items: center;
   width: 100%;
   height: calc(100vh - 60px);
-  //background-color: #ecf4fa;
+  background: url("../assets/bg.svg");
   section {
+    display: flex;
+    flex-direction: column;
     z-index: 1;
+    .home-button{
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 </style>
