@@ -426,7 +426,11 @@ export default {
       this.getHideData()
     },
     treeCheckedNodes(model) {
-      return this.formItemListAssgin?.find((itemAssign) => itemAssign.model === model)?.options?.checkedNodes || []
+      const temp = this.formItemListAssgin?.find((itemAssign) => itemAssign.model === model)
+      if (temp && temp.options && temp.options.checkedNodes) {
+        return temp.options.checkedNodes
+      }
+      return []
     },
     selectClear(data) {
       const { model, label, type, options } = data
