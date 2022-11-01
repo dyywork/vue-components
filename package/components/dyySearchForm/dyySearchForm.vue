@@ -260,7 +260,7 @@
 <script>
 import mixins from './mixins'
 import dayjs from 'dayjs'
-import FormTag from './components/FormTag'
+import FormTag from './components/FormTag.vue'
 
 export default {
   name: 'DyySearchForm',

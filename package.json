@@ -11,7 +11,7 @@
     "vxe-table",
     "ui"
   ],
-  "main": "lib/dyyVueComponents.umd.min.js",
+  "main": "lib/DUI.umd.min.js",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
