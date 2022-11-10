@@ -9,6 +9,17 @@
 
 <template>
 <div style="position: relative">
+<el-form :form="forms" size="mini" inline>
+  <el-form-item label="名称">
+    <el-input v-model="forms.label"/>
+  </el-form-item>
+  <el-form-item label="年龄">
+    <el-input v-model="forms.age"/>
+  </el-form-item>
+  <el-form-item label="测试">
+    <el-button @click="searchForm">查询</el-button>
+  </el-form-item>
+</el-form>
  <el-table :data="list" border fit size="mini" height="200">
     <el-table-column label="名称" width="180">
       <template #default="scope">
@@ -25,7 +36,11 @@ export default {
     return {
       count: 0,
       msg: '123',
-      list: [{label: '名称', age: 12},{label: '名称', age: 12},{label: '名称', age: 12},{label: '名称', age: 12},{label: '名称', age: 12},{label: '名称', age: 12},{label: '名称', age: 12},{label: '名称', age: 12},]
+      forms: {
+        label: '',
+        age:'', 
+      },
+      list: [{label: '测试', age: 12},{label: '名称123', age: 34},{label: '名称33', age: 56},{label: '名称', age: 78},{label: '名称', age: 90},{label: '名称', age: 231},{label: '名称', age: 13},{label: '名称', age: 33},]
     }
   },
   beforeCreate() {
@@ -36,11 +51,25 @@ export default {
   },
   mounted() {
       console.log('mounted');
+      this.listTwo = JSON.parse(JSON.stringify(this.list))
   },
   beforeDestroy() {},
   methods: {
     handleSearch(data) {
         console.log(data);
+    },
+    searchForm() {
+      console.log(this.forms)
+     this.list = this.listTwo.filter(item => this.changeVal(item))
+    },
+    changeVal(obj) {
+      let temp = []
+      Object.keys(this.forms).forEach(item => {
+        if (this.forms[item] != ''){
+          temp.push(this.forms[item] == obj[item])
+        }
+      })
+      return temp.every(item => item ===true)
     }
   }
 }

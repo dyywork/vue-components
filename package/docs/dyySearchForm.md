@@ -29,7 +29,7 @@
             model: 'test1',
             initialValue: null, 
             options: [
-              {value: 'A', label: 'name'},
+              {value: 'A', label: 'name123'},
               {value: 'B', label: 'name1'},
               {value: 'C', label: 'name2'},
             ],
