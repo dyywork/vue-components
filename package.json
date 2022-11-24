@@ -17,7 +17,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name DUI --dest lib package/components/index.js && npm run lib:all",
+    "lib": "vue-cli-service build --mode lib --target lib --name DUI --dest lib package/components/index.js",
     "lib:all": "webpack --config build/webpack.components.js",
     "build:pages": "git subtree push --prefix dist origin gh-pages",
     "delete:pages": "git push origin --delete gh-pages",
@@ -78,6 +78,7 @@
     "vue-template-compiler": "^2.6.14",
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^4.10.0",
+    "webpack-node-externals": "^2.5.2",
     "webpackbar": "^5.0.2"
   },
   "config": {
