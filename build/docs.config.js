@@ -1,7 +1,21 @@
 const path = require("path");
 const WebpackBar = require('webpackbar')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HappyPack = require('happypack');
+const happyThreadPool = HappyPack.ThreadPool({ size: 3 });
 module.exports = {
+    css: {
+        requireModuleExtension: true,
+        loaderOptions: {
+            css: {
+                modules: {
+                    localIdentName: 'style/[name]'
+                },
+            }
+        }
+    },
+
+
     configureWebpack: {
         plugins: [
             new WebpackBar(),

@@ -14,10 +14,10 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.c8cef69c2b4e015ea86f0a05c992492a.js"
+  "precache-manifest.862dc7b58b5c24cfd8b353ab3781e3b4.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "dyy_ui"});
+workbox.core.setCacheNameDetails({prefix: "DUI"});
 
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {

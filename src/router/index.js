@@ -40,10 +40,11 @@ const routesCommon = [
     {
         path: "/",
         component: LayoutContainer,
+        redirect: '/home',
         meta: { title: 'form' },
         children: [
             {
-                path: '/',
+                path: '/home',
                 name: 'Home',
                 component: Home,
                 meta: { title: 'Home' },

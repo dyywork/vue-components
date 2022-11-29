@@ -72,7 +72,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'FormTag',
   props: {
@@ -84,6 +83,11 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  data() {
+    return {
+    dayjs: this.$DUI.dayjs
+    }
   },
   methods: {
     handleReset() {
