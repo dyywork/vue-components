@@ -18,14 +18,17 @@
         </div>
 
         <el-menu
-          default-active="/index"
+          :default-active="menuActive"
           class="el-menu-demo"
           mode="horizontal"
           active-text-color="#409EFF"
           @select="handleSelect"
         >
-          <el-menu-item index="/index">
+          <el-menu-item index="/home">
             首页
+          </el-menu-item>
+          <el-menu-item index="/index">
+            组件
           </el-menu-item>
         </el-menu>
       </header>
@@ -39,21 +42,9 @@
 <script>
 export default {
   name: "LayoutContainer",
-  data() {
-    return {
-      count: 0
-    }
-  },
   computed: {
-    isAdd() {
-      return true
-    }
-  },
-  watch: {
-    count: {
-      handler() {
-
-      }
+    menuActive() {
+      return this.$route.path || '/home'
     }
   },
   methods: {
@@ -61,9 +52,10 @@ export default {
       if (this.$route.path === '/') return
       this.$router.push('/')
     },
-    handleSelect(key, keyPath) {
-      if (this.$route.path === '/index') return
-      this.$router.push({path: key})
+    handleSelect(key) {
+      if (this.$route.path !==key) {
+        this.$router.push({path: key})
+      }
     }
   }
 }

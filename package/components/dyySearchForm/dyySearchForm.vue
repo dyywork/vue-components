@@ -258,9 +258,8 @@
 </template>
 
 <script>
-import mixins from './mixins'
-import dayjs from 'dayjs'
-import FormTag from './components/FormTag'
+import mixins from './mixins/index.js'
+import FormTag from './components/FormTag.vue'
 
 export default {
   name: 'DyySearchForm',
@@ -356,6 +355,7 @@ export default {
     },
   },
   mounted() {
+    console.log('this',this)
     // console.log(this.$attrs)
     this.formItemListAssgin = JSON.parse(JSON.stringify(this.formItemList))
     // 根据span的总数判断第一行所展示的个数
@@ -425,9 +425,13 @@ export default {
       this.form = formKey
       this.getHideData()
     },
-    treeCheckedNodes(model) {
-      return this.formItemListAssgin?.find((itemAssign) => itemAssign.model === model)?.options?.checkedNodes || []
-    },
+    // treeCheckedNodes(model) {
+    //   const temp = this.formItemListAssgin?.find((itemAssign) => itemAssign.model === model)
+    //   if (temp && temp.options && temp.options.checkedNodes) {
+    //     return temp.options.checkedNodes
+    //   }
+    //   return []
+    // },
     selectClear(data) {
       const { model, label, type, options } = data
       this.form[model] = null
@@ -453,23 +457,23 @@ export default {
       const date = new Date()
       if (time.type === 'today') {
         this.form[item.model] = [
-          dayjs(dayjs(date.getTime()).format('YYYY-MM-DD') + '00:00:00').valueOf(),
-          dayjs(dayjs(date.getTime()).format('YYYY-MM-DD') + '00:00:00').valueOf(),
+          this.$DUI.dayjs(this.$DUI.dayjs(date.getTime()).format('YYYY-MM-DD') + '00:00:00').valueOf(),
+          this.$DUI.dayjs(this.$DUI.dayjs(date.getTime()).format('YYYY-MM-DD') + '00:00:00').valueOf(),
         ]
       } else if (time.type === 'yesterday') {
         this.form[item.model] = [
-          dayjs(dayjs(date.getTime() - 3600 * 1000 * 24).format('YYYY-MM-DD') + '00:00:00').valueOf(),
-          dayjs(dayjs(date.getTime() - 3600 * 1000 * 24).format('YYYY-MM-DD') + '00:00:00').valueOf(),
+          this.$DUI.dayjs(this.$DUI.dayjs(date.getTime() - 3600 * 1000 * 24).format('YYYY-MM-DD') + '00:00:00').valueOf(),
+          this.$DUI.dayjs(this.$DUI.dayjs(date.getTime() - 3600 * 1000 * 24).format('YYYY-MM-DD') + '00:00:00').valueOf(),
         ]
       } else if (time.type === 'week') {
         this.form[item.model] = [
-          dayjs(dayjs(date.getTime() - 7 * 3600 * 1000 * 24).format('YYYY-MM-DD') + '00:00:00').valueOf(),
-          dayjs(dayjs(date.getTime()).format('YYYY-MM-DD') + '00:00:00').valueOf(),
+          this.$DUI.dayjs(this.$DUI.dayjs(date.getTime() - 7 * 3600 * 1000 * 24).format('YYYY-MM-DD') + '00:00:00').valueOf(),
+          this.$DUI.dayjs(this.$DUI.dayjs(date.getTime()).format('YYYY-MM-DD') + '00:00:00').valueOf(),
         ]
       } else if (time.type === 'month') {
         this.form[item.model] = [
-          dayjs(dayjs(date.getTime() - 30 * 3600 * 1000 * 24).format('YYYY-MM-DD') + '00:00:00').valueOf(),
-          dayjs(dayjs(date.getTime()).format('YYYY-MM-DD') + '00:00:00').valueOf(),
+          this.$DUI.dayjs(this.$DUI.dayjs(date.getTime() - 30 * 3600 * 1000 * 24).format('YYYY-MM-DD') + '00:00:00').valueOf(),
+          this.$DUI.dayjs(this.$DUI.dayjs(date.getTime()).format('YYYY-MM-DD') + '00:00:00').valueOf(),
         ]
       }
     },
@@ -668,45 +672,7 @@ export default {
       })
       this.$emit('getSearchFormData', dataObj)
     },
-    // 树形选项
-    filterTreeNode(value, data) {
-      if (!value) return true
-      return data.name.indexOf(value) !== -1
-    },
-    // 树形选项change监听
-    checkChangeTree(checkedNodesParam, checkedKeysParam, halfCheckedNodes, halfCheckedKeys, itemRow) {
-      if (!checkedKeysParam?.checkedKeys) {
-        this.form[itemRow.model] = null
-        this.$refs['treeOption'][0].$refs['tree'].setCheckedNodes([])
-        return false
-      }
-      const { checkedNodes } = checkedKeysParam
-      this.handleCombinationVal(checkedNodes, itemRow).then((res) => {
-        this.formItemListAssgin.forEach((item) => {
-          if (item.model === itemRow.model) {
-            item.options.checkedNodes = res
-          }
-        })
-      })
-      this.$set(this.form, itemRow.model, checkedKeysParam.checkedKeys)
-    },
-    // 递归数据 组合code-name
-    handleCombinationVal(data, itemRow) {
-      return new Promise((resolve, reject) => {
-        const combinationObj = []
-        if (data?.length > 0) {
-          data.map((item) => {
-            if (!item.children || item.categoryLevel === 'LEVEL1') {
-              // const combinationItem = `${item[itemRow.options.nodeKey]}-${item.name}`
-              const combinationItem = `${item.name}`
-              combinationObj.push(combinationItem)
-            }
-            if (item?.children?.length > 0) this.handleCombinationVal(item.children, itemRow)
-          })
-          resolve(combinationObj)
-        }
-      })
-    },
+
     // 树形select选项RemoveTag
     handleRemoveTag(event, item) {
       if (item.type === 'selectTree') {

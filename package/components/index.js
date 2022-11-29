@@ -1,18 +1,19 @@
 import dyySearchForm from "./dyySearchForm";
 import dyyTable from "./dyyTable";
-import dyyCode from "./dyyCode";
 import dyyTooltip from "./dyyTooltip";
 
 const components = [
     dyySearchForm,
     dyyTable,
-    dyyCode,
     dyyTooltip
 ]
 
-const install = (Vue) => {
+const install = (Vue, options) => {
     if (install.installed) return
     components.map(component => Vue.component(component.name, component))
+
+
+    Vue.prototype.$DUI = options || {}
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -24,6 +25,5 @@ export default {
     // 以下是具体的组件列表
     dyySearchForm,
     dyyTable,
-    dyyCode,
     dyyTooltip
 }
