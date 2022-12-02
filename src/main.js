@@ -4,11 +4,11 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import 'github-markdown-css'
-// import DyyComponents from "../package/components/index.js";
-import DUI from "../lib/DUI.umd.js"
+import DUI from "../package/components/index.js";
+// import DUI from "../lib/DUI.umd.js"
 console.log(DUI);
 
-import '../lib/index.css'
+// import '../lib/index.css'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'highlight.js/styles/atom-one-dark.css'

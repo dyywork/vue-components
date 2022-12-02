@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.862dc7b58b5c24cfd8b353ab3781e3b4.js"
+  "precache-manifest.e22fbd546643d11f71f298b052bb419b.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "DUI"});

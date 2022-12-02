@@ -1,14 +1,9 @@
 <template>
   <div class="home">
     <section>
-      <img src="../assets/logo_small.png">
+      <img src="../assets/logo_small.png" />
       <div class="home-button">
-        <el-button
-          type="primary"
-          @click="goIndex"
-        >
-          开始
-        </el-button>
+        <el-button type="primary" @click="goIndex"> 开始 </el-button>
       </div>
     </section>
   </div>
@@ -16,16 +11,16 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: "Home",
   methods: {
     goIndex() {
-      this.$router.push({path: '/index'})
-    }
-  }
-}
+      this.$router.push({ path: "/components" });
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
-.home{
+.home {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +31,7 @@ export default {
     display: flex;
     flex-direction: column;
     z-index: 1;
-    .home-button{
+    .home-button {
       display: flex;
       justify-content: center;
     }

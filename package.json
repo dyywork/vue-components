@@ -33,7 +33,7 @@
     "core-js": "^3.6.5",
     "dingyongya-vue-markdown-loader": "^2.5.8",
     "dyy-vue-components": "^0.1.1",
-    "element-ui": "^2.15.8",
+    "element-ui": "^2.15.11",
     "github-markdown-css": "^5.1.0",
     "highlight.js": "^9.11.0",
     "html-loader": "^3.1.0",
