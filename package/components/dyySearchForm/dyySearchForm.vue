@@ -19,12 +19,27 @@
               v-model="form[item.prop]"
               v-bind="item"
             />
+            <el-select
+              v-if="item.type === 'select'"
+              v-model="form[item.prop]"
+              v-loadMore:handleLoadMore="item"
+              v-bind="item"
+              class="width_100"
+            >
+              <el-option
+                v-for="temp in item.options"
+                :key="temp.value"
+                :label="temp.label"
+                :value="temp.value"
+              >
+              </el-option>
+            </el-select>
           </el-form-item>
         </el-col>
       </template>
       <el-col :span="6" class="button_col">
         <el-form-item label-width="0" class="button_content">
-          <el-button type="primary"> 查询 </el-button>
+          <el-button type="primary" @click="handleSearch"> 查询 </el-button>
           <el-button>重置</el-button>
           <el-button v-if="!expand" type="text" @click="expand = true">
             更多<i class="el-icon-arrow-down" />
@@ -41,6 +56,23 @@
 <script>
 export default {
   name: "DyySearchForm",
+  directives: {
+    loadMore: {
+      bind: function (el, binding, vnode) {
+        const that = vnode.context;
+        const selectWrap_dom = el.querySelector(
+          ".el-select-dropdown .el-select-dropdown__wrap"
+        );
+        selectWrap_dom.addEventListener("scroll", function () {
+          const condition =
+            this.scrollHeight - this.scrollTop <= this.clientHeight;
+          if (condition) {
+            that[binding.arg](binding.value);
+          }
+        });
+      },
+    },
+  },
   props: {
     itemList: {
       type: Array,
@@ -55,9 +87,24 @@ export default {
     return {
       form: {},
       expand: false,
+      expandIndex: 0,
+      selectLoading: false,
     };
   },
-  methods: {},
+  created() {
+    const formObj = {};
+    this.itemList.forEach((item) => {
+      formObj[item.prop] = item.initialValue;
+    });
+    this.form = formObj;
+  },
+  methods: {
+    // 查询
+    handleSearch() {
+      this.$emit("handle-search", this.form);
+    },
+    handleLoadMore(item) {},
+  },
 };
 </script>
 
@@ -69,6 +116,9 @@ export default {
       justify-content: right;
     }
   }
+}
+.width_100 {
+  width: 100%;
 }
 .button_col {
   float: right;
