@@ -19,6 +19,13 @@
               v-model="form[item.prop]"
               v-bind="item"
             />
+            <el-input
+              v-if="item.type === 'inputNumber'"
+              v-model="form[item.prop]"
+              v-number-input:item.arg="item.numberAttrs"
+              type="number"
+              v-bind="item"
+            />
             <el-select
               v-if="item.type === 'select'"
               v-model="form[item.prop]"
@@ -34,6 +41,38 @@
               >
               </el-option>
             </el-select>
+            <el-date-picker
+              v-if="item.type === 'date'"
+              v-model="form[item.prop]"
+              :type="item.dateType"
+              class="width_100"
+              v-bind="item"
+            >
+            </el-date-picker>
+            <el-radio-group
+              v-if="item.type === 'radio'"
+              v-model="form[item.prop]"
+            >
+              <el-radio
+                v-for="temp in item.options"
+                :key="temp.value"
+                :label="temp.value"
+              >
+                {{ temp.label }}
+              </el-radio>
+            </el-radio-group>
+            <el-checkbox-group
+              v-if="item.type === 'checkbox'"
+              v-model="form[item.prop]"
+            >
+              <el-checkbox
+                v-for="temp in item.options"
+                :key="temp.value"
+                :label="temp.value"
+              >
+                {{ temp.label }}
+              </el-checkbox>
+            </el-checkbox-group>
           </el-form-item>
         </el-col>
       </template>
@@ -118,9 +157,19 @@ export default {
   }
 }
 .width_100 {
-  width: 100%;
+  width: 100% !important;
 }
 .button_col {
   float: right;
+}
+::v-deep {
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }
 </style>

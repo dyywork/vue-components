@@ -37,6 +37,19 @@ const debounce = {
 const numberInput = {
   bind: (el, binding) => {
     el.firstElementChild.oninput = function (e) {
+      if (
+        (binding.value?.min == 0 || binding.value?.min) &&
+        binding.value.min > Number(e.target.value)
+      ) {
+        e.target.value = binding.value.min;
+        el["__vue__"].handleInput(e);
+        return;
+      }
+      if (binding.value?.max && binding.value?.max < e.target.value) {
+        e.target.value = binding.value.max;
+        el["__vue__"].handleInput(e);
+        return;
+      }
       if (/\./.test(e.target.value) && binding.arg) {
         let num = e.target.value.match(/\.(\S*)/)[1].length;
         if (num > binding.arg) {
@@ -63,6 +76,9 @@ const numberInput = {
     };
     el.firstElementChild.onblur = function (e) {
       if (!e.target.value) {
+        if (binding.value?.init === null) {
+          return (e.target.value = null);
+        }
         e.target.value = 0;
       }
     };

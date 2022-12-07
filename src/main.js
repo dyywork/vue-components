@@ -3,11 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "github-markdown-css";
-import DUI from "../package/components/index.js";
-// import DUI from "../lib/DUI.umd.js"
+// import DUI from "../package/components/index.js";
+import DUI from "../lib/DUI.umd.js";
+import "../lib/index.css";
 console.log(DUI);
 
-// import '../lib/index.css'
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import "highlight.js/styles/atom-one-dark.css";
@@ -17,8 +17,7 @@ import DyyTitle from "./components/DyyTitle.vue";
 import DyyCode from "./components/dyyCode/dyyCode.vue";
 import directives from "./directive/index";
 Vue.use(directives);
-// import dyyVueComponents from "dyy-vue-components";
-// import 'dyy-vue-components/lib/vueComponents.css'
+
 import "prismjs";
 import dayjs from "dayjs";
 import mockjs from "mockjs";

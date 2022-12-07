@@ -31,7 +31,7 @@
               {label: '选择1', value: 'select1'},
               {label: '选择2', value: 'select2'},
             ], 
-            initialValue: null,
+            initialValue: '',
             placeholder: '请选择',
             span: 6
           },
@@ -66,10 +66,20 @@
             placeholder: '请选择',
             span: 6
           },
-          {type: "input", label: "输入框", prop: 'test5', initialValue: null, placeholder: '请输入', span: 6},
-          {type: "input", label: "输入框", prop: 'test6', initialValue: null, placeholder: '请输入', span: 6},
-          {type: "input", label: "输入框", prop: 'test7', initialValue: null, placeholder: '请输入'},
-          {type: "input", label: "输入框", prop: 'test8', initialValue: null, placeholder: '请输入', span: 6},
+          {type: "date", label: "日期", dateType: 'date',prop: 'test5', initialValue: '', placeholder: '请输入', span: 6},
+          {type: "date", label: "年份", dateType: 'year', prop: 'test6', initialValue: '', placeholder: '请输入', span: 6},
+          {type: "date", label: "月份", dateType: 'month', prop: 'month', initialValue: '', placeholder: '请输入', span: 6},
+          {type: "date", label: "多日期", dateType: 'dates', prop: 'dates', initialValue: [], placeholder: '请输入', span: 6},
+          {type: "date", label: "多月份", dateType: 'months', prop: 'months', initialValue: [], placeholder: '请输入', span: 6},
+          {type: "date", label: "多年份", dateType: 'years', prop: 'years', initialValue: [], placeholder: '请输入', span: 6},
+          {type: "date", label: "周", dateType: 'week', prop: 'week', initialValue: '', placeholder: '请输入', span: 6},
+          {type: "date", label: "时间", dateType: 'datetime', prop: 'datetime', initialValue: '', placeholder: '请输入', span: 6},
+          {type: "date", label: "时间区间", dateType: 'datetimerange', prop: 'datetimerange', initialValue: '', placeholder: '请输入', span: 6},
+          {type: "date", label: "日期区间", dateType: 'daterange', prop: 'daterange', initialValue: '', placeholder: '请输入', span: 6},
+          {type: "date", label: "月份区间", dateType: 'monthrange', prop: 'monthrange', initialValue: '', placeholder: '请输入', span: 6},
+          {type: "radio", label: "单选", prop: 'radio', initialValue: true, options: [{value: true, label: '是'}, {value: false, label: '否'}]},
+          {type: "checkbox", label: "多选", prop: 'checkbox', initialValue: [], options: [{value: 'city1', label: '上海'}, {value: 'city2', label: '南京'}]},
+          {type: "inputNumber", label: "数字", prop: 'inputNumber', initialValue: ''},
         ],
         queryForm: {
           size: 20,
@@ -137,12 +147,13 @@
 
 ::: table
 
-| 参数           | 描述                | 类型     | 可选值 | 默认值 |
-| :------------- | :------------------ | :------- | :----: | :----: |
-| `type`         | 表单控件类型        | `String` |   --   |   --   |
-| `prop`         | 表单控件 v-model 值 | `String` |   --   |   --   |
-| `label`        | 表单控件名称        | `String` |   --   |   --   |
-| `initialValue` | 表单控件初始值      | --       |   --   |   --   |
-| `span`         | 表单控件每行占比    | `Number` |   --   |   6    |
+| 参数           | 描述                | 类型     |                                                   可选值                                                   | 默认值 |
+| :------------- | :------------------ | :------- | :--------------------------------------------------------------------------------------------------------: | :----: |
+| `type`         | 表单控件类型        | `String` |                                 `input` `select` `date` `radio` `checkbox`                                 |   --   |
+| `prop`         | 表单控件 v-model 值 | `String` |                                                     --                                                     |   --   |
+| `label`        | 表单控件名称        | `String` |                                                     --                                                     |   --   |
+| `initialValue` | 表单控件初始值      | --       |                                                     --                                                     |   --   |
+| `dateType`     | 表单时间控件类型    | `String` | `year` `month` `date` `dates` `months` `years` `week` `datetime` `datetimerange` `daterange` `monthrange ` |   --   |
+| `span`         | 表单控件每行占比    | `Number` |                                                     --                                                     |   6    |
 
 :::
