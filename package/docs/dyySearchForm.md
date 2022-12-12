@@ -4,6 +4,119 @@
 ::: title 基本用法
 :::
 
+:::demo
+
+<template>
+  <el-card shadow="never">
+    <dyy-search-form
+      :item-list="itemList1"
+      :row="2"
+      size="mini"
+      label-width="100px"
+      @handle-search="handleSearch">
+    </dyy-search-form>
+    </el-card>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        itemList1:[{type: "input", label: "输入框", prop: 'test', initialValue: null, placeholder: '请输入', span: 6},] 
+      }
+    }
+  }
+</script>
+
+:::
+
+::: title select
+:::
+:::demo
+
+<template>
+  <el-card shadow="never">
+    <dyy-search-form
+      :item-list="itemList2"
+      :row="2"
+      size="mini"
+      label-width="100px"
+      @handle-search="handleSearch">
+    </dyy-search-form>
+    </el-card>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        itemList2:[
+          {
+            type: "select", 
+            label: "选择框",
+            prop: 'test1', 
+            options:[
+              {label: '选择1', value: 'select1'},
+              {label: '选择2', value: 'select2'},
+            ], 
+            initialValue: '',
+            placeholder: '请选择',
+            span: 6
+          },
+          {
+            type: "select", 
+            label: "多选择框",
+            prop: 'test2', 
+            options:[
+              {label: '选择1', value: 'select1'},
+              {label: '选择2', value: 'select2'},
+              {label: '选择3', value: 'select3'},
+              {label: '选择4', value: 'select4'},
+            ], 
+            initialValue: [],
+            multiple: true,
+            collapseTags: true,
+            placeholder: '请选择',
+            span: 6
+          },
+          {
+            type: "select", 
+            label: "远程加载",
+            prop: 'test4', 
+            options:[], 
+            initialValue: [],
+            multiple: true,
+            collapseTags: true,
+            filterable: true,
+            remote: true,
+            remoteMethod: (key) => this.remoteMethod1(key, 'test4'),
+            isLoadMore: true,
+            reserveKeyword: true,
+            placeholder: '请选择',
+            span: 6
+          },
+        ] 
+      }
+    },
+    mounted() {
+      this.remoteMethod1('', 'test4')
+    },
+    methods: {
+    async remoteMethod1(key, prop) {
+      const {list} = await this.getList({page: 1, size: 10});
+      this.itemList2.forEach(item => {
+        if(item.prop === prop) {
+          item.options = list
+        }
+      })
+    },
+    }
+  }
+</script>
+
+:::
+
+::: title 整合
+:::
+
 ::: demo
 
 <template>

@@ -80,12 +80,14 @@
         <el-form-item label-width="0" class="button_content">
           <el-button type="primary" @click="handleSearch"> 查询 </el-button>
           <el-button>重置</el-button>
-          <el-button v-if="!expand" type="text" @click="expand = true">
-            更多<i class="el-icon-arrow-down" />
-          </el-button>
-          <el-button v-else type="text" @click="expand = false">
-            收起<i class="el-icon-arrow-up" />
-          </el-button>
+          <template v-if="itemList.length * row * 6 > 24 * row">
+            <el-button v-if="!expand" type="text" @click="expand = true">
+              更多<i class="el-icon-arrow-down" />
+            </el-button>
+            <el-button v-else type="text" @click="expand = false">
+              收起<i class="el-icon-arrow-up" />
+            </el-button>
+          </template>
         </el-form-item>
       </el-col>
     </el-row>
@@ -136,13 +138,18 @@ export default {
       formObj[item.prop] = item.initialValue;
     });
     this.form = formObj;
+    console.log(this.itemList.length * this.row * 6 > 24 * this.row);
   },
   methods: {
     // 查询
     handleSearch() {
       this.$emit("handle-search", this.form);
     },
-    handleLoadMore(item) {},
+    handleLoadMore(item) {
+      if (item.isLoadMore) {
+        console.log(item);
+      }
+    },
   },
 };
 </script>

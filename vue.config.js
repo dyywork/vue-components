@@ -7,12 +7,11 @@ const configWebpack = process.env.VUE_APP_LIB_ENV ? libConfig : docsConfig;
 md({
   html: true,
 });
-const { demo, title, table, anchor } = require("./src/config/mdPlugin");
+const { demo, title, table, anchor, vue } = require("./src/config/mdPlugin");
 
 module.exports = {
   publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
   ...configWebpack,
-
   parallel: false,
   chainWebpack: (config) => {
     if (process.env.VUE_APP_LIB_ENV) {
@@ -50,6 +49,7 @@ module.exports = {
           [container, "danger"],
           [container, "details"],
           [container, "demo", demo],
+          [container, "vue", vue],
           [container, "title", title],
           [container, "table", table],
           [container, "anchor", anchor],

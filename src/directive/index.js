@@ -50,6 +50,7 @@ const numberInput = {
         el["__vue__"].handleInput(e);
         return;
       }
+
       if (/\./.test(e.target.value) && binding.arg) {
         let num = e.target.value.match(/\.(\S*)/)[1].length;
         if (num > binding.arg) {
@@ -80,6 +81,11 @@ const numberInput = {
           return (e.target.value = null);
         }
         e.target.value = 0;
+      } else {
+        while (/^-?0\d+/.test(e.target.value)) {
+          e.target.value = Number(e.target.value.substring(1));
+        }
+        el["__vue__"].handleInput(e);
       }
     };
   },

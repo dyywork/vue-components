@@ -3,9 +3,9 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import "github-markdown-css";
-// import DUI from "../package/components/index.js";
-import DUI from "../lib/DUI.umd.js";
-import "../lib/index.css";
+import DUI from "../package/components/index.js";
+// import DUI from "../lib/DUI.umd.js";
+// import "../lib/index.css";
 console.log(DUI);
 
 import ElementUI from "element-ui";
