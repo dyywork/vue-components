@@ -40,17 +40,15 @@ export default {
         label: '',
         age:'', 
       },
-      list: [{label: '测试', age: 12},{label: '名称123', age: 34},{label: '名称33', age: 56},{label: '名称', age: 78},{label: '名称', age: 90},{label: '名称', age: 231},{label: '名称', age: 13},{label: '名称', age: 33},]
+      list: [
+        {label: '测试', age: 12},{label: '名称123', age: 34},
+        {label: '名称33', age: 56},{label: '名称', age: 78},
+        {label: '名称', age: 90},{label: '名称', age: 231},
+        {label: '名称', age: 13},{label: '名称', age: 33},
+      ]
     }
   },
-  beforeCreate() {
-      console.log('beforeCreate');
-  },
-  beforeMount() {
-      console.log('beforeMount');
-  },
   mounted() {
-      console.log('mounted');
       this.listTwo = JSON.parse(JSON.stringify(this.list))
   },
   beforeDestroy() {},

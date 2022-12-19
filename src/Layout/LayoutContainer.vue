@@ -49,9 +49,13 @@ export default {
   name: "LayoutContainer",
   computed: {
     menuActive() {
-      return /components/.test(this.$route.path)
-        ? "/components"
-        : this.$route.path || "/home";
+      if (/components/.test(this.$route.path)) {
+        return "/components"
+      } else if(/guide/.test(this.$route.path)) {
+        return '/guide'
+      }else {
+        return this.$route.path || "/home"
+      }
     },
   },
   methods: {

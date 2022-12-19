@@ -15,7 +15,7 @@
         v-for="item in routes"
         :key="item.name"
       >
-        <span slot="title">{{ item.meta.title }}</span>
+        <span v-if="!type" slot="title">{{ item.meta.title }}</span>
         <el-menu-item
           v-for="itemRoutes in item.children"
           :key="itemRoutes.name"
@@ -31,16 +31,24 @@
 
 <script>
 import {routes} from '@src/router'
+import {guideRouter} from '@src/router'
 
 export default {
   name: "MenuSide",
+  props: {
+    type: {
+      type: String,
+      default: ''
+    },
+  },
   data() {
     return {
-      routes,
+      routes: this.type ? guideRouter: routes,
       index: '/'
     }
   },
   mounted() {
+    console.log(guideRouter)
     const {path} = this.$route
     this.index = path
   },

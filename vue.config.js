@@ -2,6 +2,7 @@ const container = require("markdown-it-container");
 const md = require("markdown-it");
 const libConfig = require("./build/webpack.lib.config");
 const docsConfig = require("./build/docs.config");
+const hljs = require('highlight.js')
 
 const configWebpack = process.env.VUE_APP_LIB_ENV ? libConfig : docsConfig;
 md({
@@ -43,6 +44,9 @@ module.exports = {
         script: true,
         wrapper: "div",
         className: "markdown",
+        highlight: function(str) {
+          return hljs.highlightAuto(str).value;
+        },
         use: [
           [container, "tip"],
           [container, "warning"],

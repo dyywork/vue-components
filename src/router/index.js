@@ -36,6 +36,24 @@ export const routes = [
   },
 ];
 
+export const guideRouter = [
+  {
+    path: "/guide",
+    name: "Guide",
+    redirect: "/guide/about",
+    component: () => import("@src/views/Guide.vue"),
+    meta: { title: "指南" },
+    children: [
+      {
+        path: "/guide/about",
+        name: "About",
+        component: () => import("@src/views/test.md"),
+        meta: { title: "About" },
+      }
+    ]
+  },
+];
+
 const routesCommon = [
   {
     path: "/",
@@ -49,12 +67,7 @@ const routesCommon = [
         component: Home,
         meta: { title: "Home" },
       },
-      {
-        path: "/guide",
-        name: "Guide",
-        component: () => import("@src/views/Guide.vue"),
-        meta: { title: "指南" },
-      },
+      ...guideRouter,
       ...routes,
     ],
   },

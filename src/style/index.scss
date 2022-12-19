@@ -141,6 +141,14 @@ $borderColor: #EBEEF5;
     }
   }
 }
-.markdown {
-  width: calc(100% - 150px);
+// .markdown {
+//   width: calc(100% - 150px);
+// }
+.el-menu-vertical-demo{
+  .el-menu-item.is-active {
+    background-color: #ecf5ff;
+  }
+}
+.main-container{
+  padding-right: 180px;
 }
