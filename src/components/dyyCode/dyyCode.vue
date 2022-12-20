@@ -5,11 +5,11 @@
   <div class="dyy_code">
     <height-transition>
       <div v-show="codeContent">
-        <div class="dyy_copy_button" @click="copyCode">
+        <div class="dyy_copy_button" @click.prevent.capture="copyCode">
           <div v-pre class="codeHtml" style="display: none">
             <slot name="code" />
           </div>
-          复制
+          <i class="el-icon-document-copy"></i>
         </div>
         <div class="language-html line-numbers">
           <slot />
@@ -55,7 +55,7 @@ export default {
     },
     copyCode(e) {
       this.codeHtml = unescapeHtml(
-        e.target.children[0].children[0].children[0].innerHTML
+        e.target?.children[0]?.children[0]?.children[0]?.innerHTML
       );
       // 复制 不支持http
       navigator &&
@@ -95,11 +95,15 @@ export default {
     z-index: 10;
     font-size: 12px;
     color: #409eff;
-    border: 1px #c6e2ff solid;
-    background-color: #ecf5ff;
     border-radius: 3px;
     padding: 3px 5px;
     cursor: pointer;
+    .el-icon-document-copy{
+      font-size: 18px;
+    }
+    &:hover{
+      background-color: #ecf5ff;
+    }
   }
   .dyy_code_border {
     border-top: 1px #ebeef5 solid;

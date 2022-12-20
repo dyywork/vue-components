@@ -1,27 +1,17 @@
-# dyy-vue-components
+# dyy-ui
 
 - 日常使用element-ui自定义是组件库
 
-## Project setup
+## 安装
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+npm i @dyywork/dyy-ui
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### 引入
+```js
+import DUI form '@/dyywork/dyy-ui'
+improt '@/dyywork/dyy-ui/lib/index.css'
 
-### Lints and fixes files
-```
-yarn lint
-```
+Vue.use(DUI, { dayjs: dayjs });
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
+```

@@ -1,9 +1,9 @@
 {
-  "name": "DUI",
+  "name": "@dyywork/dyy-ui",
   "author": {
     "name": "dyywork"
   },
-  "version": "0.1.42",
+  "version": "0.0.1",
   "description": "vue 快捷组件",
   "keywords": [
     "vue",
@@ -26,7 +26,8 @@
     "publish:local": "npm run build &&  git add . && git-cz && npm run delete:pages && npm run build:pages && npm run rm:dist",
     "commit": "git add . && git-cz && git push",
     "rm:dist": "git rm -r dist && git add . && git commit -m 'feat:docs' && git push",
-    "report": "vue-cli-service build --report"
+    "report": "vue-cli-service build --report",
+    "publish:package": "npm publish --access=public"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "1.0.2",
