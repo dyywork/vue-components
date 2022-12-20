@@ -19,6 +19,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.map
+.env.lib
+commitlint.config.js
+package.json
 
 .idea
 .vscode
