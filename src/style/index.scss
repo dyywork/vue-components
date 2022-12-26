@@ -57,13 +57,29 @@ ul{
 .el-main, .language-html{
   @include base-scrollbar;
 }
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-bg: #fff;
+    --primary-fg: #000;
+    --secondary-bg: #ddd;
+    --secondary-fg: #555;
+    --primary-btn-bg: #000;
+    --primary-btn-fg: #fff;
+    --secondary-btn-bg: #ff0000;
+    --secondary-btn-fg: #ffff00;
+  }
+}
+
+
 html {
+  background: var(--primary-bg);
   body {
     position: relative;
     padding: 0;
     margin: 0;
     color: #2c3e50;
-    background: #ffffff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -73,6 +89,9 @@ html {
       @include base-scrollbar;
     }
   }
+}
+.dark-mode {
+  background-color: var(--primary-bg);
 }
 
 $borderColor: #EBEEF5;
@@ -155,4 +174,12 @@ $borderColor: #EBEEF5;
 .hljs{
   background-color: #fafafa;
   overflow-x:auto;
+}
+
+li {
+  code{
+    background-color: #faEafa;
+    padding: 3px;
+    border-radius: 3px;
+  }
 }

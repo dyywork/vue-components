@@ -95,6 +95,10 @@ export default {
   }
   .header_right {
     float: right;
+    .theme-btn{
+      padding: 10px;
+      cursor: pointer;
+    }
   }
   img {
     cursor: pointer;

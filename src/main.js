@@ -10,6 +10,10 @@ console.log(DUI);
 
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
+
+import VXETable from 'vxe-table'
+import 'vxe-table/lib/style.css'
+
 import "highlight.js/styles/atom-one-dark.css";
 import "@src/style/index.scss";
 import DyyAnchor from "./components/DyyAnchor.vue";
@@ -28,6 +32,8 @@ Vue.component("dyy-title", DyyTitle);
 Vue.component("dyy-code", DyyCode);
 Vue.use(DUI, { dayjs: dayjs, mock: mockjs.mock });
 Vue.use(ElementUI);
+Vue.use(VXETable)
+
 new Vue({
   router,
   store,

@@ -40,13 +40,13 @@ export const guideRouter = [
   {
     path: "/guide",
     name: "Guide",
-    redirect: "/guide/about",
+    redirect: "/guide/install",
     component: () => import("@src/views/Guide.vue"),
     meta: { title: "指南" },
     children: [
       {
-        path: "/guide/about",
-        name: "About",
+        path: "/guide/install",
+        name: "Install",
         component: () => import("@docs/install.md"),
         meta: { title: "安装" },
       },
