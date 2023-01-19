@@ -24,10 +24,10 @@
     "delete:pages": "git push origin --delete gh-pages",
     "prepare": "husky install",
     "publish:local": "npm run build &&  git add . && git-cz && npm run delete:pages && npm run build:pages && npm run rm:dist",
-    "commit": "git add . && git-cz && git push && git push origin dyy",
+    "commit": "git add . && git-cz && git push",
     "rm:dist": "git rm -r dist && git add . && git commit -m 'feat:docs' && git push",
     "report": "vue-cli-service build --report",
-    "publish:package": "npm publish --access=public"
+    "publish:package": "npm publish --access=public --tag=beta"
   },
   "dependencies": {
     "@highlightjs/vue-plugin": "1.0.2",
