@@ -2,13 +2,13 @@ const container = require("markdown-it-container");
 const md = require("markdown-it");
 const libConfig = require("./build/webpack.lib.config");
 const docsConfig = require("./build/docs.config");
-const hljs = require('highlight.js')
+const hljs = require("highlight.js");
 
 const configWebpack = process.env.VUE_APP_LIB_ENV ? libConfig : docsConfig;
 md({
   html: true,
 });
-const { demo, title, table, anchor } = require("./src/config/mdPlugin");
+const { demo, title, table, anchor, update } = require("./src/config/mdPlugin");
 
 module.exports = {
   publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
@@ -44,7 +44,7 @@ module.exports = {
         script: true,
         wrapper: "div",
         className: "markdown",
-        highlight: function(str) {
+        highlight: function (str) {
           return hljs.highlightAuto(str).value;
         },
         use: [
@@ -56,6 +56,7 @@ module.exports = {
           [container, "title", title],
           [container, "table", table],
           [container, "anchor", anchor],
+          [container, "update", update],
         ],
       });
   },

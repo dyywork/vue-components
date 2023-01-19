@@ -55,8 +55,14 @@ export const guideRouter = [
         name: "Introduce",
         component: () => import("@docs/introduce.md"),
         meta: { title: "介绍" },
-      }
-    ]
+      },
+      {
+        path: "/guide/update",
+        name: "Update",
+        component: () => import("@docs/update.md"),
+        meta: { title: "更新" },
+      },
+    ],
   },
 ];
 

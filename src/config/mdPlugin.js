@@ -1,4 +1,5 @@
 const escapeHtml = require("escape-html");
+
 /*
  * markdown demo code setting
  * */
@@ -68,4 +69,29 @@ const anchor = {
   },
 };
 
-module.exports = { demo, title, table, anchor };
+// markdown update
+const update = {
+  validate(params) {
+    return params.trim().match(/^update\s*(.*)$/);
+  },
+  render(tokens, idx) {
+    if (tokens[idx].nesting === 1) {
+      const m = tokens[idx].info.trim().match(/^update\s*(.*)$/);
+      const content =
+        tokens[idx + 1]?.type === "fence" ? tokens[idx + 1].content : "";
+      let updateList = [];
+      if (m && content) {
+        updateList.push({
+          time: m[1].split(" ")[0],
+          version: m[1].split(" ")[1],
+          content: content,
+        });
+      }
+
+      return `<dyy-update timeline-list='${JSON.stringify(updateList)}'>`;
+    }
+    return "</dyy-update>";
+  },
+};
+
+module.exports = { demo, title, table, anchor, update };
