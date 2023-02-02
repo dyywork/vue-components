@@ -94,4 +94,29 @@ const update = {
   },
 };
 
-module.exports = { demo, title, table, anchor, update };
+const page = {
+  validate(params) {
+    return params.trim().match(/^page\s*(.*)$/);
+  },
+  render(tokens, idx) {
+    if (tokens[idx].nesting === 1) {
+      return `<dyy-page>`;
+    }
+    return "</dyy-page>";
+  },
+};
+
+const contributor = {
+  validate(params) {
+    return params.trim().match(/^contributor\s*(.*)$/);
+  },
+  render(tokens, idx) {
+    if (tokens[idx].nesting === 1) {
+      const m = tokens[idx].info.trim().match(/^contributor\s*(.*)$/);
+      return `<dyy-contributor contribute-list='${m[1]}'>`;
+    }
+    return "</dyy-contributor>";
+  },
+};
+
+module.exports = { demo, title, table, anchor, update, page, contributor };

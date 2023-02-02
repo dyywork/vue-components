@@ -28,10 +28,11 @@ export default {
         ) {
           return;
         }
+
         navigator.clipboard
           .writeText(e.target.innerHTML)
           .then(() => {
-            this.$message.success("复制成功");
+            this.$message.success(`复制成功: ${e.target.innerHTML}`);
           })
           .catch((err) => {
             console.log("Something went wrong", err);

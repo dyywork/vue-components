@@ -1,7 +1,6 @@
 ::: anchor
 :::
 
-
 ::: title Tooltip
 :::
 
@@ -110,4 +109,13 @@ export default {
   }
 </script>
 
+:::
+
+::: title 贡献者
+:::
+
+::: contributor dyyTooltip
+:::
+
+::: page
 :::

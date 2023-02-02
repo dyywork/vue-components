@@ -1,7 +1,6 @@
 ::: anchor
 :::
 
-
 ::: title 表格
 :::
 
@@ -145,4 +144,13 @@ export default {
     margin-bottom: 0px;
   }
 </style>
+:::
+
+::: title 贡献者
+:::
+
+::: contributor dyyTable
+:::
+
+::: page
 :::

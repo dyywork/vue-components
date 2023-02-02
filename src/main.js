@@ -20,6 +20,8 @@ import DyyAnchor from "./components/DyyAnchor.vue";
 import DyyTitle from "./components/DyyTitle.vue";
 import DyyUpdate from "./components/DyyUpdate.vue";
 import DyyCode from "./components/dyyCode/dyyCode.vue";
+import DyyPage from "./components/DyyPage";
+import DyyContributor from "./components/DyyContributor";
 import directives from "./directive/index";
 Vue.use(directives);
 
@@ -32,6 +34,8 @@ Vue.component("dyy-anchor", DyyAnchor);
 Vue.component("dyy-title", DyyTitle);
 Vue.component("dyy-code", DyyCode);
 Vue.component("dyy-update", DyyUpdate);
+Vue.component("dyy-page", DyyPage);
+Vue.component("dyy-contributor", DyyContributor);
 Vue.use(DUI, { dayjs: dayjs, mock: mockjs.mock });
 Vue.use(ElementUI);
 Vue.use(VXETable);

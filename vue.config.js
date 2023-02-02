@@ -8,7 +8,15 @@ const configWebpack = process.env.VUE_APP_LIB_ENV ? libConfig : docsConfig;
 md({
   html: true,
 });
-const { demo, title, table, anchor, update } = require("./src/config/mdPlugin");
+const {
+  demo,
+  title,
+  table,
+  anchor,
+  update,
+  page,
+  contributor,
+} = require("./src/config/mdPlugin");
 
 module.exports = {
   publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
@@ -57,6 +65,8 @@ module.exports = {
           [container, "table", table],
           [container, "anchor", anchor],
           [container, "update", update],
+          [container, "page", page],
+          [container, "contributor", contributor],
         ],
       });
   },
