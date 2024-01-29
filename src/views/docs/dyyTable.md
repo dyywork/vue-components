@@ -1,6 +1,25 @@
 ::: anchor
 :::
 
+::: title 表格 1
+:::
+
+::: demo
+
+<template>
+<dyy-table></dyy-table>
+</template>
+<script>
+export default {
+  data() {
+    return {}
+  },
+  methods: {}
+}
+</script>
+
+:::
+
 ::: title 表格
 :::
 
